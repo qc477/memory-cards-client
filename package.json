@@ -35,6 +35,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.21.0",
+    "eslint-plugin-react": "^7.30.1",
     "html-webpack-plugins": "^3.0.0",
     "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
