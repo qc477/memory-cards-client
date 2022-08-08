@@ -1,7 +1,15 @@
 import React from 'react';
+import Header from 'components/Header';
+import Logo from 'components/Logo/Logo';
 
 const Home: React.FC = () => {
-  return <>Home pages</>;
+  return (
+    <>
+      <Header>
+        <Logo />
+      </Header>
+    </>
+  );
 };
 
 export default Home;
