@@ -2,7 +2,7 @@ import React from 'react';
 import cl from './Header.module.css';
 
 interface HeaderProps {
-  isBackBtn: boolean;
+  isBackBtn?: boolean;
   children: React.ReactNode;
 }
 
