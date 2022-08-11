@@ -1,5 +1,5 @@
-import Icons from 'components/Icons';
 import React from 'react';
+import { BackButton } from '../UI/Buttons';
 import cl from './Header.module.css';
 
 interface HeaderProps {
@@ -11,12 +11,8 @@ const Header: React.FC<HeaderProps> = ({ isBackBtn = false, children }) => {
   return (
     <header className={cl.header}>
       <div className={cl.wrapper}>
-        <button className={cl.backButton}>
-          <Icons className={cl.backButtonIcon} name='arrow-left' width='24.5' height='28' />
-        </button>
-        <div className={cl.childrenBlock}>
-          {children}
-        </div>
+        <BackButton />
+        <div className={cl.childrenBlock}>{children}</div>
       </div>
     </header>
   );
