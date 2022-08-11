@@ -3,11 +3,10 @@ import { BackButton } from '../UI/Buttons';
 import cl from './Header.module.css';
 
 interface HeaderProps {
-  isBackBtn?: boolean;
   children: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps> = ({ isBackBtn = false, children }) => {
+const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <header className={cl.header}>
       <div className={cl.wrapper}>
