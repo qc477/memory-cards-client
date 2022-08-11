@@ -1,12 +1,15 @@
 import React from 'react';
+import { AddButton, InfoButton, SettingsButton } from '../UI/Buttons';
 import cl from './HeaderButtons.module.css';
 
-interface HeaderButtonsProps {
-  children: React.ReactNode;
-}
-
-const HeaderButtons: React.FC<HeaderButtonsProps> = ({ children }) => {
-  return <div className={cl.headerButtons}>{children}</div>;
+const HeaderButtons: React.FC = () => {
+  return (
+    <div className={cl.headerButtons}>
+      <AddButton />
+      <InfoButton />
+      <SettingsButton />
+    </div>
+  );
 };
 
 export default HeaderButtons;
