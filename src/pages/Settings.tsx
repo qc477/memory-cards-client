@@ -7,8 +7,8 @@ const Settings: React.FC = () => {
     <>
       <Header>
         <Logo />
-        <div style={{ marginTop: 80 }}>Settings</div>
       </Header>
+      <div style={{ marginTop: 80 }}>Settings</div>
     </>
   );
 };
