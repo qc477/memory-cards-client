@@ -4,7 +4,7 @@ import cl from './Buttons.module.css';
 
 const AddButton: React.FC = () => {
   return (
-    <button className={cl.button}>
+    <button className={cl.button} title='Добавить колоду'>
       <Icons className={cl.icon} name='add' width='28' height='28' />
     </button>
   );

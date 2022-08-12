@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackButton } from '../UI/Buttons';
+import { BackLink } from '../UI/Links';
 import Navigation from '../Navigation';
 import cl from './Header.module.css';
 
@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <header className={cl.header}>
       <div className={cl.wrapper}>
-        <BackButton />
+        <BackLink />
         <div className={cl.childrenBlock}>
           {children}
           <Navigation />
