@@ -1,4 +1,4 @@
 import BackLink from './BackLink';
-import InfoLink from './InfoLink';
+import AboutLink from './AboutLink';
 import SettingsLink from './SettingsLink';
-export { BackLink, InfoLink, SettingsLink };
+export { BackLink, AboutLink, SettingsLink };

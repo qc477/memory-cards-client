@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from 'pages/Home';
+import { Home, About, Settings } from './pages';
 
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route index element={<Home />} />
+      <Route path='about' element={<About />} />
+      <Route path='settings' element={<Settings />} />
     </Routes>
   );
 };

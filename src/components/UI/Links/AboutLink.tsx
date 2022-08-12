@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 import Icons from '../../Icons';
 import cl from './Links.module.css';
 
-const InfoLink: React.FC = () => {
+const AboutLink: React.FC = () => {
   return (
-    <NavLink to='info' className={cl.link}>
+    <NavLink to='about' className={cl.link}>
       <Icons className={cl.iconLink} name='info' width='28' height='28' />
     </NavLink>
   );
 };
 
-export default InfoLink;
+export default AboutLink;

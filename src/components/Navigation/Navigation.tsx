@@ -1,6 +1,6 @@
 import React from 'react';
 import { AddButton } from '../UI/Buttons';
-import { InfoLink, SettingsLink } from '../UI/Links';
+import { AboutLink, SettingsLink } from '../UI/Links';
 import cl from './Navigation.module.css';
 
 const Navigation: React.FC = () => {
@@ -11,7 +11,7 @@ const Navigation: React.FC = () => {
           <AddButton />
         </li>
         <li className={cl.navigationItem}>
-          <InfoLink />
+          <AboutLink />
         </li>
         <li className={cl.navigationItem}>
           <SettingsLink />
