@@ -1,8 +1,8 @@
 import React from 'react';
 import { AddButton, InfoButton, SettingsButton } from '../UI/Buttons';
-import cl from './HeaderButtons.module.css';
+import cl from './Navigation.module.css';
 
-const HeaderButtons: React.FC = () => {
+const Navigation: React.FC = () => {
   return (
     <div className={cl.headerButtons}>
       <AddButton />
@@ -12,4 +12,4 @@ const HeaderButtons: React.FC = () => {
   );
 };
 
-export default HeaderButtons;
+export default Navigation;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BackButton } from '../UI/Buttons';
-import HeaderButtons from '../HeaderButtons';
+import Navigation from '../Navigation';
 import cl from './Header.module.css';
 
 interface HeaderProps {
@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         <BackButton />
         <div className={cl.childrenBlock}>
           {children}
-          <HeaderButtons />
+          <Navigation />
         </div>
       </div>
     </header>
