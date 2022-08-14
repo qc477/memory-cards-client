@@ -4,10 +4,10 @@ import Icons from '../../Icons';
 import cl from './Buttons.module.css';
 
 interface BackLinkProps {
-  isVisible?: boolean;
+  isVisible: boolean;
 }
 
-const BackButton: React.FC<BackLinkProps> = ({ isVisible = false }) => {
+const BackButton: React.FC<BackLinkProps> = ({ isVisible }) => {
   const navigate = useNavigate()
 
   return (
