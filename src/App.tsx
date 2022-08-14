@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { About, Home, Settings } from './pages';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Logo from './components/Logo';
 import './index.css';
@@ -11,11 +10,6 @@ const App: React.FC = () => {
       <Header>
         <Logo />
       </Header>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='settings' element={<Settings />} />
-      </Routes>
     </BrowserRouter>
   );
 };
