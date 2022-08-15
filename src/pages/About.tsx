@@ -11,7 +11,7 @@ const About: React.FC = () => {
     return () => {
       dispatch(toggle(false));
     }
-  });
+  }, []);
 
   return (
     <>
