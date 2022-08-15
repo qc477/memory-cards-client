@@ -1,10 +1,11 @@
 import React from 'react';
+import SortingBlock from '../components/SortingBlock';
 
 const Home: React.FC = () => {
   return (
-    <>
-      <div style={{marginTop: 80}}>Home</div>
-    </>
+    <main>
+      <SortingBlock />
+    </main>
   );
 };
 
