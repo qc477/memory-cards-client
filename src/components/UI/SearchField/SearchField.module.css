@@ -1,0 +1,31 @@
+.searchField {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  padding: .5rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 1rem;
+}
+
+.searchFieldFocuse {
+  padding: .4375rem;
+  border-color: var(--active);
+  border-width: 2px;
+}
+
+.searchFieldIcon {
+  height: 28px;
+  fill: var(--gray);
+}
+
+.searchFieldFocuse .searchFieldIcon {
+  fill: var(--active);
+}
+
+.searchFieldInput {
+  flex-grow: 1;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
