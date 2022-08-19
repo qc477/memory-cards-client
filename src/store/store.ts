@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import headerReducer from './reducers/HeaderSlice';
+import logoReducer from './reducers/LogoSlice';
 
 const rootReduser = combineReducers({
-  headerReducer
+  headerReducer,
+  logoReducer
 });
 
 export const setupStore = () => {
