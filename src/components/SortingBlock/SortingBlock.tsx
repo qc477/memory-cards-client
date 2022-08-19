@@ -5,7 +5,9 @@ import cl from './SortingBlock.module.css';
 const SortingBlock: React.FC = () => {
   return (
     <div className={cl.sortingBlock}>
-      <SearchField />
+      <div className={cl.inner}>
+        <SearchField />
+      </div>
     </div>
   );
 };

@@ -1,4 +1,9 @@
 .sortingBlock {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.inner {
   padding: 1rem;
   background-color: var(--gainsborough);
   border-radius: 1rem;
