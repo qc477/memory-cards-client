@@ -7,7 +7,7 @@ const SettingsButton: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <button className={cl.button} onClick={() => navigate('/settings')}>
+    <button className={cl.button} onClick={() => navigate('/settings')} title='Настройки'>
       <Icons className={cl.icon} name='settings' width='28' height='28' />
     </button>
   );
