@@ -3,4 +3,5 @@ import AboutButton from './AboutButton';
 import SettingsButton from './SettingsButton';
 import BackButton from './BackButton';
 import MoreButton from './MoreButton';
-export { AddButton, AboutButton, SettingsButton, BackButton, MoreButton };
+import PlayButton from './PlayButton';
+export { AddButton, AboutButton, SettingsButton, BackButton, MoreButton, PlayButton };

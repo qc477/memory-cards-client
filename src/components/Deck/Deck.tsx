@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoreButton } from '../UI/Buttons';
+import { MoreButton, PlayButton } from '../UI/Buttons';
 import cl from './Deck.module.css';
 
 const Deck: React.FC = () => {
@@ -15,14 +15,17 @@ const Deck: React.FC = () => {
           <p className={cl.infoText}>Упражнений: 23</p>
         </div>
         <div className={cl.bottom}>
-          <ul className={cl.statistics}>
-            <li className={cl.statisticsItem}>A: 9K</li>
-            <li className={cl.statisticsItem}>B: 450</li>
-            <li className={cl.statisticsItem}>C: 200</li>
-            <li className={cl.statisticsItem}>D: 250</li>
-            <li className={cl.statisticsItem}>E: 100</li>
-          </ul>
-          <time dateTime='2022-07-20'>20.07.2022</time>
+          <div className={cl.statistics}>
+            <ul className={cl.statisticsList}>
+              <li className={cl.statisticsItem}>A: 9K</li>
+              <li className={cl.statisticsItem}>B: 450</li>
+              <li className={cl.statisticsItem}>C: 200</li>
+              <li className={cl.statisticsItem}>D: 250</li>
+              <li className={cl.statisticsItem}>E: 100</li>
+            </ul>
+          </div>
+          <time className={cl.date} dateTime='2022-07-20'>20.07.22</time>
+          <PlayButton />
         </div>
       </div>
     </article>
