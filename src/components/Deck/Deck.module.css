@@ -36,3 +36,8 @@
   padding: 0;
   margin: 0;
 }
+
+.statistics {
+  display: flex;
+}
+
