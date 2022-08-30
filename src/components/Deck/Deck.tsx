@@ -1,4 +1,5 @@
 import React from "react";
+import { MoreButton } from "../UI/Buttons";
 import cl from './Deck.module.css';
 
 const Deck: React.FC = () => {
@@ -6,7 +7,7 @@ const Deck: React.FC = () => {
     <article className={cl.deck}>
       <div className={cl.wrapper}>
         <h3 className={cl.title}>Англо - Русский словарь</h3>
-        <button className={cl.moreBtn}>...</button>
+        <MoreButton />
         <p className={cl.infoText}>Всего слов: 10000</p>
         <p className={cl.infoText}>Упражнений: 23</p>
         <ul className={cl.statistics}>
