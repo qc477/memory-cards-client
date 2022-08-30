@@ -4,6 +4,16 @@
   border-radius: 1rem;
 }
 
+.wrapper {
+  display: grid;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .title {
   padding: 0;
   margin: 0;

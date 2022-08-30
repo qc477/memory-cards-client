@@ -1,13 +1,15 @@
-import React from "react";
-import { MoreButton } from "../UI/Buttons";
+import React from 'react';
+import { MoreButton } from '../UI/Buttons';
 import cl from './Deck.module.css';
 
 const Deck: React.FC = () => {
-  return(
+  return (
     <article className={cl.deck}>
       <div className={cl.wrapper}>
-        <h3 className={cl.title}>Англо - Русский словарь</h3>
-        <MoreButton />
+        <div className={cl.top}>
+          <h3 className={cl.title}>Англо - Русский словарь</h3>
+          <MoreButton />
+        </div>
         <p className={cl.infoText}>Всего слов: 10000</p>
         <p className={cl.infoText}>Упражнений: 23</p>
         <ul className={cl.statistics}>
