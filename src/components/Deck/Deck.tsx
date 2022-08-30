@@ -10,8 +10,10 @@ const Deck: React.FC = () => {
           <h3 className={cl.title}>Англо - Русский словарь</h3>
           <MoreButton />
         </div>
-        <p className={cl.infoText}>Всего слов: 10000</p>
-        <p className={cl.infoText}>Упражнений: 23</p>
+        <div className={cl.middle}>
+          <p className={cl.infoText}>Всего слов: 10000</p>
+          <p className={cl.infoText}>Упражнений: 23</p>
+        </div>
         <ul className={cl.statistics}>
           <li className={cl.statisticsItem}>A: 9K</li>
           <li className={cl.statisticsItem}>B: 450</li>
