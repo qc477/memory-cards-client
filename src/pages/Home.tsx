@@ -4,7 +4,7 @@ import { logoSlice } from '../store/reducers/LogoSlice';
 import Main from '../components/Main';
 import AppContainer from '../components/AppContainer';
 import SortingBlock from '../components/SortingBlock';
-import DecksList from '../components/DecksList';
+import Decks from '../components/Decks';
 
 const Home: React.FC = () => {
   const { changeTitle } = logoSlice.actions;
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     <Main>
       <AppContainer>
         <SortingBlock />
-        <DecksList />
+        <Decks />
       </AppContainer>
     </Main>
   );
