@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { headerSlice } from '../store/reducers/HeaderSlice';
-import { logoSlice } from '../store/reducers/LogoSlice';
+import { appTitleSlice } from '../store/reducers/AppTitleSlice';
 
 const About: React.FC = () => {
   const { toggle } = headerSlice.actions;
-  const { changeTitle } = logoSlice.actions;
+  const { changeTitle } = appTitleSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {

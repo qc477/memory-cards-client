@@ -1,11 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import headerReducer from './reducers/HeaderSlice';
-import logoReducer from './reducers/LogoSlice';
+import appTitleReducer from './reducers/AppTitleSlice';
 import { deckAPI } from '../services/DeckService';
 
 const rootReduser = combineReducers({
   headerReducer,
-  logoReducer,
+  appTitleReducer,
   [deckAPI.reducerPath]: deckAPI.reducer,
 });
 

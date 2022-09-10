@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface LogoState {
+interface AppTitleState {
   title: string;
 }
 
-const initialState: LogoState = {
+const initialState: AppTitleState = {
   title: 'LeitnerSystemApp',
 };
 
-export const logoSlice = createSlice({
-  name: 'logo',
+export const appTitleSlice = createSlice({
+  name: 'appTitle',
   initialState,
   reducers: {
     changeTitle(state, action: PayloadAction<string>) {
@@ -18,4 +18,4 @@ export const logoSlice = createSlice({
   },
 });
 
-export default logoSlice.reducer;
+export default appTitleSlice.reducer;
