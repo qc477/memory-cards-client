@@ -1,18 +1,18 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import headerReducer from './reducers/HeaderSlice';
 import logoReducer from './reducers/LogoSlice';
-import { decksAPI } from '../services/DecksService';
+import { deckAPI } from '../services/DeckService';
 
 const rootReduser = combineReducers({
   headerReducer,
   logoReducer,
-  [decksAPI.reducerPath]: decksAPI.reducer,
+  [deckAPI.reducerPath]: deckAPI.reducer,
 });
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReduser,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(decksAPI.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(deckAPI.middleware),
   });
 };
 
