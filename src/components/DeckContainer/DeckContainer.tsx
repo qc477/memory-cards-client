@@ -7,9 +7,17 @@ const DeckContainer: React.FC = () => {
   const { data: decks } = deckAPI.useFetchAllDecksQuery('');
   return (
     <div className={cl.deckContainer}>
-      {decks && decks.map((deck) => (
-        <Deck key={deck.id} />
-      ))}
+      {decks &&
+        decks.map((deck) => (
+          <Deck
+            key={deck.id}
+            id={deck.id}
+            title={deck.title}
+            totalWords={deck.totalWords}
+            totalExercises={deck.totalExercises}
+            groups={deck.groups}
+          />
+        ))}
     </div>
   );
 };
