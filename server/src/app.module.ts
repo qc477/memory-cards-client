@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { DecksModule } from './decks/decks.module';
 
 @Module({
   controllers: [],
@@ -19,6 +20,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
       models: [],
       autoLoadModels: true,
     }),
+    DecksModule,
   ],
 })
 export class AppModule {}
