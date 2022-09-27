@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { Deck } from './decks/decks.models';
 import { DecksModule } from './decks/decks.module';
 
 @Module({
@@ -17,7 +18,7 @@ import { DecksModule } from './decks/decks.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [],
+      models: [Deck],
       autoLoadModels: true,
     }),
     DecksModule,
