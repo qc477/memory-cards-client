@@ -1,4 +1,5 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
+import { Word } from '../words/words.model';
 
 interface DeckCreationAttrs {
   title: string;
@@ -25,4 +26,7 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
 
   @Column({ type: DataType.STRING, defaultValue: 'NEW' })
   dateLastExercise: string;
+
+  @HasMany(() => Word)
+  words: Word[];
 }
