@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Deck } from './decks.models';
+import { Deck } from './decks.model';
 import { CreateDeckDto } from './dto/create-deck.dto';
 
 @Injectable()

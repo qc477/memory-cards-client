@@ -6,7 +6,7 @@ import {
   BelongsTo,
   ForeignKey,
 } from 'sequelize-typescript';
-import { Deck } from '../decks/decks.models';
+import { Deck } from '../decks/decks.model';
 
 interface WordCreationAttrs {
   word: string;
