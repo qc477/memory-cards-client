@@ -14,7 +14,7 @@ interface CardCreationAttrs {
   deckId: number;
 }
 
-@Table({ tableName: 'cards' })
+@Table({ tableName: 'cards', createdAt: false, updatedAt: false })
 export class Card extends Model<Card, CardCreationAttrs> {
   @Column({
     type: DataType.INTEGER,

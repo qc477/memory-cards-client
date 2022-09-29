@@ -4,15 +4,15 @@ import { CreateDeckDto } from './dto/create-deck.dto';
 
 @Controller('decks')
 export class DecksController {
-  constructor(private deckService: DecksService) {}
+  constructor(private decksService: DecksService) {}
 
   @Post()
   create(@Body() deckDto: CreateDeckDto) {
-    return this.deckService.createDeck(deckDto);
+    return this.decksService.createDeck(deckDto);
   }
 
   @Get()
   getAll() {
-    return this.deckService.getAllDecks();
+    return this.decksService.getAllDecks();
   }
 }
