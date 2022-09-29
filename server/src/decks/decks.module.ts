@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { Word } from '../words/words.models';
 import { DecksController } from './decks.controller';
-import { Deck } from './decks.models';
 import { DecksService } from './decks.service';
+import { Deck } from './decks.model';
+import { Card } from '../cards/cards.model';
 
 @Module({
   controllers: [DecksController],
   providers: [DecksService],
-  imports: [SequelizeModule.forFeature([Deck, Word])],
+  imports: [SequelizeModule.forFeature([Deck, Card])],
 })
 export class DecksModule {}

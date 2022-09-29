@@ -8,13 +8,14 @@ import {
 } from 'sequelize-typescript';
 import { Deck } from '../decks/decks.model';
 
-interface WordCreationAttrs {
+interface CardCreationAttrs {
   word: string;
   translation: string;
+  deckId: number;
 }
 
-@Table({ tableName: 'words' })
-export class Word extends Model<Word, WordCreationAttrs> {
+@Table({ tableName: 'cards' })
+export class Card extends Model<Card, CardCreationAttrs> {
   @Column({
     type: DataType.INTEGER,
     unique: true,

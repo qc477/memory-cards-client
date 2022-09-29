@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Deck } from './decks/decks.model';
-import { Word } from './words/words.model';
+import { Card } from './cards/cards.model';
 import { DecksModule } from './decks/decks.module';
-import { WordsModule } from './words/words.module';
+import { CardsModule } from './cards/cards.module';
 
 @Module({
   controllers: [],
@@ -20,11 +20,11 @@ import { WordsModule } from './words/words.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Deck, Word],
+      models: [Deck, Card],
       autoLoadModels: true,
     }),
     DecksModule,
-    WordsModule,
+    CardsModule,
   ],
 })
 export class AppModule {}
