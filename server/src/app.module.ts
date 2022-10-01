@@ -4,7 +4,6 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { Deck } from './decks/decks.model';
 import { Card } from './cards/cards.model';
 import { DecksModule } from './decks/decks.module';
-import { CardsModule } from './cards/cards.module';
 
 @Module({
   controllers: [],
@@ -24,7 +23,6 @@ import { CardsModule } from './cards/cards.module';
       autoLoadModels: true,
     }),
     DecksModule,
-    CardsModule,
   ],
 })
 export class AppModule {}
