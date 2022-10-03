@@ -1,5 +1,5 @@
 import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
-import { Card } from '../cards/cards.model';
+import { Card } from './cards.model';
 
 interface DeckCreationAttrs {
   title: string;

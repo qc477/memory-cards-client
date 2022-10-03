@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { Deck } from './decks/decks.model';
-import { Card } from './cards/cards.model';
+import { Deck } from './decks/models/decks.model';
+import { Card } from './decks/models/cards.model';
 import { DecksModule } from './decks/decks.module';
 
 @Module({
