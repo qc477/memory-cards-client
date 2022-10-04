@@ -9,8 +9,8 @@ import {
 import { Deck } from './decks.model';
 
 interface CardCreationAttrs {
-  word: string;
-  translation: string;
+  question: string;
+  answer: string;
   deckId: number;
 }
 
@@ -25,10 +25,10 @@ export class Card extends Model<Card, CardCreationAttrs> {
   id: number;
 
   @Column({ type: DataType.STRING, allowNull: false })
-  word: string;
+  question: string;
 
   @Column({ type: DataType.STRING, allowNull: false })
-  translation: string;
+  answer: string;
 
   @Column({ type: DataType.INTEGER, defaultValue: 1 })
   groupNumber: number;
