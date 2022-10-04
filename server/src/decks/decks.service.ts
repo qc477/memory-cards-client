@@ -12,22 +12,27 @@ export class DecksService {
     @InjectModel(Card) private cardRepository: typeof Card,
   ) {}
 
-  async createDeck(dto: CreateDeckDto) {
+  async createDeck(dto: CreateDeckDto): Promise<Deck> {
     const deck = await this.deckRepository.create(dto);
     return deck;
   }
 
-  async getAllDecks() {
+  async getAllDecks(): Promise<Deck[]> {
     const decks = await this.deckRepository.findAll();
     return decks;
   }
 
-  async createCard(dto: CreateCardDto) {
+  async createCard(dto: CreateCardDto): Promise<Card> {
     const card = await this.cardRepository.create(dto);
+    const deck = await this.deckRepository.findOne({
+      where: { id: dto.deckId },
+    });
+    deck.totalWords = deck.totalWords + 1;
+    deck.save();
     return card;
   }
 
-  async getAllCards(deckId: number) {
+  async getAllCards(deckId: number): Promise<Card[]> {
     const cards = await this.cardRepository.findAll({
       where: { deckId: deckId },
     });

@@ -5,23 +5,25 @@ import { CreateCardDto } from './dto/create-card.dto';
 
 @Controller('decks')
 export class DecksController {
-  constructor(
-    private decksService: DecksService,
-  ) {}
+  constructor(private decksService: DecksService) {}
+
+  /* Decks */
 
   @Post()
   create(@Body() deckDto: CreateDeckDto) {
     return this.decksService.createDeck(deckDto);
   }
 
-  @Post('/add-card')
-  createCard(@Body() cardDto: CreateCardDto) {
-    return this.decksService.createCard(cardDto);
-  }
-
   @Get()
   getAll() {
     return this.decksService.getAllDecks();
+  }
+
+  /* Cards */
+
+  @Post('/:deckId/cards/add')
+  createCard(@Param('deckId') deckId: number, @Body() cardDto: CreateCardDto) {
+    return this.decksService.createCard({ ...cardDto, deckId: deckId });
   }
 
   @Get('/:deckId/cards')
