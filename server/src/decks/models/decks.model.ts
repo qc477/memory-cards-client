@@ -28,5 +28,5 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
   dateLastExercise: string;
 
   @HasMany(() => Card)
-  words: Card[];
+  cards: Card[];
 }
