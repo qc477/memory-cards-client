@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Param } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param, Delete } from '@nestjs/common';
 import { DecksService } from './decks.service';
 import { CreateDeckDto } from './dto/create-deck.dto';
 import { CreateCardDto } from './dto/create-card.dto';
@@ -10,23 +10,28 @@ export class DecksController {
   /* Decks */
 
   @Post()
-  create(@Body() deckDto: CreateDeckDto) {
+  createDeck(@Body() deckDto: CreateDeckDto) {
     return this.decksService.createDeck(deckDto);
   }
 
   @Get()
-  getAll() {
+  getAllDecks() {
     return this.decksService.getAllDecks();
+  }
+
+  @Delete(':id')
+  deleteDeck(@Param('id') id: number) {
+    return this.decksService.deleteDeck(id);
   }
 
   /* Cards */
 
-  @Post('/:deckId/cards/add')
+  @Post(':deckId/cards/add')
   createCard(@Param('deckId') deckId: number, @Body() cardDto: CreateCardDto) {
     return this.decksService.createCard({ ...cardDto, deckId: deckId });
   }
 
-  @Get('/:deckId/cards')
+  @Get(':deckId/cards')
   getAllCards(@Param('deckId') deckId: number) {
     return this.decksService.getAllCards(deckId);
   }

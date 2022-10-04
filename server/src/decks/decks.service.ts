@@ -22,6 +22,11 @@ export class DecksService {
     return decks;
   }
 
+  async deleteDeck(id: number): Promise<number> {
+    await this.deckRepository.destroy({ where: { id: id } });
+    return id;
+  }
+
   async createCard(dto: CreateCardDto): Promise<Card> {
     const card = await this.cardRepository.create(dto);
     const deck = await this.deckRepository.findOne({
