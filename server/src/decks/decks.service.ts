@@ -12,6 +12,8 @@ export class DecksService {
     @InjectModel(Card) private cardRepository: typeof Card,
   ) {}
 
+  /* Decks */
+
   async createDeck(dto: CreateDeckDto): Promise<Deck> {
     const deck = await this.deckRepository.create(dto);
     return deck;
@@ -23,9 +25,11 @@ export class DecksService {
   }
 
   async deleteDeck(id: number): Promise<number> {
-    await this.deckRepository.destroy({ where: { id: id } });
+    await this.deckRepository.destroy({ where: { id: id }, force: true });
     return id;
   }
+
+  /* Cards */
 
   async createCard(dto: CreateCardDto): Promise<Card> {
     const card = await this.cardRepository.create(dto);
@@ -42,5 +46,10 @@ export class DecksService {
       where: { deckId: deckId },
     });
     return cards;
+  }
+
+  async deleteCard(id: number): Promise<number> {
+    await this.cardRepository.destroy({ where: { id: id }, force: true });
+    return id;
   }
 }

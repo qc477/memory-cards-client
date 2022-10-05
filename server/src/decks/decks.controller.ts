@@ -35,4 +35,9 @@ export class DecksController {
   getAllCards(@Param('deckId') deckId: number) {
     return this.decksService.getAllCards(deckId);
   }
+
+  @Delete('*/cards/:id')
+  deleteCard(@Param('id') id: number) {
+    return this.decksService.deleteCard(id);
+  }
 }
