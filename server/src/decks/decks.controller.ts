@@ -26,7 +26,7 @@ export class DecksController {
 
   /* Cards */
 
-  @Post(':deckId/cards/add')
+  @Post(':deckId/cards')
   createCard(@Param('deckId') deckId: number, @Body() cardDto: CreateCardDto) {
     return this.decksService.createCard({ ...cardDto, deckId: deckId });
   }
