@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const Home = React.lazy(() => import('../../pages/Home'));
+const AllDecks = React.lazy(() => import('../../pages/AllDecks'));
 const About = React.lazy(() => import('../../pages/About'));
 const Settings = React.lazy(() => import('../../pages/Settings'));
 
@@ -9,10 +9,10 @@ const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route
-        path='/'
+        path='/decks'
         element={
           <React.Suspense fallback={<p>Загрузка страницы</p>}>
-            <Home />
+            <AllDecks />
           </React.Suspense>
         }
       />
