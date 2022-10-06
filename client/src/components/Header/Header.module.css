@@ -17,3 +17,7 @@
   height: 60px;
   margin: 0 1rem;
 }
+
+.header button svg {
+  fill: var(--accent-weak);
+}
