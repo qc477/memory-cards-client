@@ -5,7 +5,7 @@ interface AppTitleState {
 }
 
 const initialState: AppTitleState = {
-  title: 'LeitnerSystemApp',
+  title: '',
 };
 
 export const appTitleSlice = createSlice({
