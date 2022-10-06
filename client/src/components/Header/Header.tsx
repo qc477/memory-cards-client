@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
   return (
     <header className={cl.header}>
-      <div className={cl.wrapper}>
+      <div className={cl.body}>
         <div className={cl.childrenBlock}>
           {children}
         </div>
