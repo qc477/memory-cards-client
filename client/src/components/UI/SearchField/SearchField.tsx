@@ -8,7 +8,7 @@ const SearchField: React.FC = () => {
 
   return (
     <div className={`${cl.searchField} ${isFocuse ? cl.searchFieldFocuse : ''}`}>
-      <Icons className={cl.searchFieldIcon} name='search' width='28' height='28' />
+      <Icons className={cl.searchFieldIcon} name='search' />
       <input
         className={cl.searchFieldInput}
         type='text'

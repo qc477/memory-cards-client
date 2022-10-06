@@ -8,7 +8,7 @@ const SettingsButton: React.FC = () => {
 
   return (
     <button className={cl.button} onClick={() => navigate('/settings')} title='Настройки'>
-      <Icons className={cl.icon} name='settings' width='28' height='28' />
+      <Icons className={cl.icon} name='settings' />
     </button>
   );
 };

@@ -8,7 +8,7 @@ const AboutButton: React.FC = () => {
 
   return (
     <button className={cl.button} onClick={() => navigate('/about')} title='О приложении'>
-      <Icons className={cl.icon} name='info' width='28' height='28' />
+      <Icons className={cl.icon} name='info' />
     </button>
   );
 };

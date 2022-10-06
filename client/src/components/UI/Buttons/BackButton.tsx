@@ -12,7 +12,7 @@ const BackButton: React.FC<BackLinkProps> = ({ isVisible }) => {
 
   return (
     <button className={isVisible ? cl.button : cl.hide} onClick={() => navigate('..')}>
-      <Icons className={cl.icon} name='arrow-left' width='28' height='28' />
+      <Icons className={cl.icon} name='arrow-left' />
     </button>
   );
 };
