@@ -2,18 +2,18 @@ import React from 'react';
 import IconsSVG from './icons.svg';
 
 interface IconsProps {
-  name: string,
-  width?: string,
-  height?: string,
-  className: string
+  className: string;
+  name: string;
+  width?: string;
+  height?: string;
 }
 
-const Icons: React.FC<IconsProps> = ({name, width, height, className}) => {
+const Icons: React.FC<IconsProps> = ({ className, name, width = '32', height = '32' }) => {
   return (
     <svg className={className} width={width} height={height}>
       <use xlinkHref={`${IconsSVG}#icon-${name}`} />
     </svg>
   );
-}
+};
 
 export default Icons;
