@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(changeTitle('LeitnerSystemApp'));
+    dispatch(changeTitle('Все колоды'));
   }, []);
 
   return (
