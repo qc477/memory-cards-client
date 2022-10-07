@@ -29,5 +29,5 @@ body {
     'Helvetica Neue',
     Arial,
     sans-serif;
-  color: var(--brown);
+  background-color: var(--faint-weak);
 }
