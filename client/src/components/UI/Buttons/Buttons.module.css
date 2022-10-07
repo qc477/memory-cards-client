@@ -21,6 +21,6 @@
 
 .icon {
   height: 100%;
-  fill: var(--gray);
+  fill: var(--accent-weak);
   transition: .2s;
 }
