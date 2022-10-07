@@ -24,7 +24,3 @@
   fill: var(--gray);
   transition: .2s;
 }
-
-.button:hover .icon {
-  fill: var(--active);
-}
