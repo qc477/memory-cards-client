@@ -9,7 +9,7 @@ const Menu: React.FC = () => {
   return (
     <div className={isOpen ? cl.menuOpen : cl.menuClose}>
       <div className={cl.menuWrapper}>
-        <nav className={cl.menu}>
+        <div className={cl.menu}>
           <div className={cl.menuHeader}>
             <Title text='Меню' />
           </div>
@@ -18,7 +18,7 @@ const Menu: React.FC = () => {
             <li className={cl.menuItem}>settings</li>
             <li className={cl.menuItem}>about</li>
           </ul>
-        </nav>
+        </div>
       </div>
     </div>
   );
