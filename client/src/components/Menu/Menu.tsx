@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppSelector } from 'hooks/redux';
+import Title from '../Title';
 import cl from './Menu.module.css';
 
 const Menu: React.FC = () => {
@@ -10,7 +11,7 @@ const Menu: React.FC = () => {
       <div className={cl.menuWrapper}>
         <nav className={cl.menu}>
           <div className={cl.menuHeader}>
-            <p className={cl.menuTitle}>Меню</p>
+            <Title text='Меню' />
           </div>
           <ul className={cl.menuList}>
             <li className={cl.menuItem}>account</li>
