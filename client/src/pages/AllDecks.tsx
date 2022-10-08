@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { appTitleSlice } from '../store/reducers/AppTitleSlice';
+import { headerSlice } from '../store/reducers/HeaderSlice';
 import Main from '../components/Main';
 import AppContainer from '../components/AppContainer';
 import SortingBlock from '../components/SortingBlock';
 import DeckContainer from '../components/DeckContainer';
 
-const Home: React.FC = () => {
-  const { changeTitle } = appTitleSlice.actions;
+const AllDecks: React.FC = () => {
+  const { changeTitleText } = headerSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(changeTitle('Все колоды'));
+    dispatch(changeTitleText('Все колоды'));
   }, []);
 
   return (
@@ -24,4 +24,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default AllDecks;

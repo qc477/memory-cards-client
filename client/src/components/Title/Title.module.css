@@ -1,6 +1,9 @@
-.appTitle {
+.title {
   padding: 0;
   margin: 0;
+}
+
+.titleH1 {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--accent-weak);

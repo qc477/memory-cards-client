@@ -1,17 +1,17 @@
 import React from 'react';
-import cl from './Header.module.css';
+import { useAppSelector } from 'hooks/redux';
 import { AddButton, MenuButton } from '../UI/Buttons';
+import Title from '../Title';
+import cl from './Header.module.css';
 
-interface HeaderProps {
-  children: React.ReactNode;
-}
+const Header: React.FC = () => {
+  const { titleText } = useAppSelector((state) => state.headerReducer);
 
-const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <header className={cl.header}>
       <div className={cl.body}>
         <MenuButton />
-        {children}
+        <Title text={titleText} />
         <AddButton />
       </div>
     </header>

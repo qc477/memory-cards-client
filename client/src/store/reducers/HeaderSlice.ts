@@ -1,19 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface HeaderState {
-  isShowBackButton: boolean;
+  titleText: string;
 }
 
 const initialState: HeaderState = {
-  isShowBackButton: false,
+  titleText: 'OpenMemoryCards',
 };
 
 export const headerSlice = createSlice({
   name: 'header',
   initialState,
   reducers: {
-    toggle(state, action: PayloadAction<boolean>) {
-      state.isShowBackButton = action.payload;
+    changeTitleText(state, action: PayloadAction<string>) {
+      state.titleText = action.payload;
     },
   },
 });
