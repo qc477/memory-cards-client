@@ -35,7 +35,7 @@ const Navigation: React.FC = () => {
         <li className={cl.navItem}>
           <NavLink to={NavigationPath.DONATION} className={cl.navLink}>
             <Icons className={cl.navIcon} name='monetization' />
-            Поддержать
+            Поддержать проект
           </NavLink>
         </li>
         <li className={cl.navItem}>

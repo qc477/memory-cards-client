@@ -1,0 +1,19 @@
+.navList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: var(--accent-weak);
+  text-decoration: none;
+}
+
+.navIcon {
+  height: 2rem;
+  margin-right: 0.5rem;
+  fill: var(--accent-weak);
+}
