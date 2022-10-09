@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { menuSlice } from '../../store/reducers/MenuSlice';
 import Title from '../Title';
 import { CloseButton } from '../UI/Buttons';
+import Navigation from '../Navigation';
 import cl from './Menu.module.css';
 
 const Menu: React.FC = () => {
@@ -11,7 +12,7 @@ const Menu: React.FC = () => {
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
 
-  function close() {
+  function close(): void {
     dispatch(setIsOpen(false));
   }
 
@@ -21,13 +22,9 @@ const Menu: React.FC = () => {
         <div className={cl.menu}>
           <div className={cl.menuHeader}>
             <Title text='Меню' />
-            <CloseButton _onClick={close}/>
+            <CloseButton _onClick={close} />
           </div>
-          <ul className={cl.menuList}>
-            <li className={cl.menuItem}>account</li>
-            <li className={cl.menuItem}>settings</li>
-            <li className={cl.menuItem}>about</li>
-          </ul>
+          <Navigation />
         </div>
       </div>
     </div>
