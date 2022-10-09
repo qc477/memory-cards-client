@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppSelector } from 'hooks/redux';
 import Title from '../Title';
+import { CloseButton } from '../UI/Buttons';
 import cl from './Menu.module.css';
 
 const Menu: React.FC = () => {
@@ -12,6 +13,7 @@ const Menu: React.FC = () => {
         <div className={cl.menu}>
           <div className={cl.menuHeader}>
             <Title text='Меню' />
+            <CloseButton />
           </div>
           <ul className={cl.menuList}>
             <li className={cl.menuItem}>account</li>
