@@ -5,14 +5,14 @@ interface MenuState {
 }
 
 const initialState: MenuState = {
-  isOpen: true,
+  isOpen: false,
 };
 
 export const menuSlice = createSlice({
   name: 'menu',
   initialState,
   reducers: {
-    toggleMenu(state, action: PayloadAction<boolean>) {
+    setIsOpen(state, action: PayloadAction<boolean>) {
       state.isOpen = action.payload;
     },
   },
