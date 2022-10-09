@@ -3,35 +3,43 @@ import { NavLink } from 'react-router-dom';
 import Icons from '../Icons';
 import cl from './Navigation.module.css';
 
+enum NavigationPath {
+  ACCOUNT = 'account',
+  SETTINGS = 'settings',
+  ABOUT = 'about',
+  DONATION = 'donation',
+  SOURCE_CODE = 'https://github.com/qc477/OpenMemoryCards',
+}
+
 const Navigation: React.FC = () => {
   return (
     <nav>
       <ul className={cl.navList}>
         <li className={cl.navItem}>
-          <NavLink to={'account'} className={cl.navLink}>
+          <NavLink to={NavigationPath.ACCOUNT} className={cl.navLink}>
             <Icons className={cl.navIcon} name='account' />
             Аккаунт
           </NavLink>
         </li>
         <li className={cl.navItem}>
-          <NavLink to={'settings'} className={cl.navLink}>
+          <NavLink to={NavigationPath.SETTINGS} className={cl.navLink}>
             <Icons className={cl.navIcon} name='settings' />
             Настройки
           </NavLink>
         </li>
         <li className={cl.navItem}>
-          <NavLink to={'about'} className={cl.navLink}>
+          <NavLink to={NavigationPath.ABOUT} className={cl.navLink}>
             <Icons className={cl.navIcon} name='info' />О приложении
           </NavLink>
         </li>
         <li className={cl.navItem}>
-          <NavLink to={'donation'} className={cl.navLink}>
+          <NavLink to={NavigationPath.DONATION} className={cl.navLink}>
             <Icons className={cl.navIcon} name='monetization' />
             Поддержать
           </NavLink>
         </li>
         <li className={cl.navItem}>
-          <a href='https://github.com/qc477/OpenMemoryCards' className={cl.navLink}>
+          <a href={NavigationPath.SOURCE_CODE} className={cl.navLink}>
             <Icons className={cl.navIcon} name='code' />
             Исходный код
           </a>
