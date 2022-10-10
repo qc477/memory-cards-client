@@ -4,16 +4,34 @@
   list-style: none;
 }
 
+.navItem,
+.navLink,
+.navIcon {
+  transition: 0.2s;
+}
+
+.navItem:hover {
+  background-color: var(--accent-strong-down);
+}
+
+.navItem:hover .navLink {
+  color: var(--accent-weak);
+}
+
+.navItem:hover .navIcon {
+  fill: var(--accent-weak);
+}
+
 .navLink {
   display: flex;
   align-items: center;
   padding: 1rem;
-  color: var(--accent-weak);
+  color: var(--accent-strong-text);
   text-decoration: none;
 }
 
 .navIcon {
   height: 2rem;
   margin-right: 0.5rem;
-  fill: var(--accent-weak);
+  fill: var(--accent-strong-text);
 }
