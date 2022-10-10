@@ -5,6 +5,6 @@
 
 .inner {
   padding: 1rem;
-  background-color: var(--gainsborough);
-  border-radius: 1rem;
+  background-color: var(--faint-strong-down);
+  border-radius: .5rem;
 }
