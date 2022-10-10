@@ -5,6 +5,7 @@ import cl from './DeckContainer.module.css';
 
 const DeckContainer: React.FC = () => {
   const { data: decks } = deckAPI.useFetchAllDecksQuery('');
+
   return (
     <div className={cl.deckContainer}>
       {decks &&
@@ -15,7 +16,7 @@ const DeckContainer: React.FC = () => {
             title={deck.title}
             totalWords={deck.totalWords}
             totalExercises={deck.totalExercises}
-            groups={deck.groups}
+            dateLastExercise={deck.dateLastExercise}
           />
         ))}
     </div>

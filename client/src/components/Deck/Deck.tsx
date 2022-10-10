@@ -3,7 +3,7 @@ import { MoreButton, PlayButton } from '../UI/Buttons';
 import { IDeck } from '../../models/IDeck';
 import cl from './Deck.module.css';
 
-const Deck: React.FC<IDeck> = ({ id, title, totalWords, totalExercises, groups }) => {
+const Deck: React.FC<IDeck> = ({ id, title, totalWords, totalExercises, dateLastExercise }) => {
   return (
     <article className={cl.deck}>
       <div className={cl.wrapper}>
@@ -16,17 +16,8 @@ const Deck: React.FC<IDeck> = ({ id, title, totalWords, totalExercises, groups }
           <p className={cl.infoText}>Упражнений: {totalExercises}</p>
         </div>
         <div className={cl.bottom}>
-          <div className={cl.statistics}>
-            <ul className={cl.statisticsList}>
-              {groups.map((group) => (
-                <li key={group.id} className={cl.statisticsItem}>
-                  {group.name.toUpperCase()}: {group.wordCount}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <time className={cl.date} dateTime='2022-07-20'>
-            20.07.22
+          <time className={cl.date} dateTime={dateLastExercise}>
+            {dateLastExercise}
           </time>
           <PlayButton />
         </div>

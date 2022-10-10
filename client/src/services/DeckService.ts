@@ -3,7 +3,7 @@ import { IDeck } from '../models/IDeck';
 
 export const deckAPI = createApi({
   reducerPath: 'deckAPI',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://leitnersystemapp-db.herokuapp.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.BASE_URL as string }),
   endpoints: (build) => ({
     fetchAllDecks: build.query<IDeck[], string>({
       query: () => ({
