@@ -1,8 +1,8 @@
 .deck {
   padding: 1rem;
   background-color: var(--base-weak);
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px 1px rgb(0 0 0 / 25%);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 6px 1px rgb(0 0 0 / 12%);
 }
 
 .wrapper {
@@ -32,14 +32,10 @@
   margin-top: 0.25rem;
 }
 
-.title {
-  padding: 0;
-  margin: 0;
-}
-
 .infoText {
   padding: 0;
   margin: 0;
+  color: var(--base-strong-down);
 }
 
 .statistics {

@@ -17,7 +17,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
           </IconButton>
         </div>
         <div className={cl.middle}>
-          <p className={cl.infoText}>Всего слов: {totalCards}</p>
+          <p className={cl.infoText}>Карточек: {totalCards}</p>
           <p className={cl.infoText}>Упражнений: {totalExercises}</p>
         </div>
         <div className={cl.bottom}>
