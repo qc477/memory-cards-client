@@ -1,7 +1,7 @@
 export interface IDeck {
   id: number;
   title: string;
-  totalWords: number;
+  totalCards: number;
   totalExercises: number;
   dateLastExercise: string;
 }

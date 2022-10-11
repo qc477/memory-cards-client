@@ -1,11 +1,13 @@
+import { IDeck } from 'models/IDeck';
 import React from 'react';
 import Deck from '../Deck';
-import { deckAPI } from '../../services/DeckService';
 import cl from './DeckContainer.module.css';
 
-const DeckContainer: React.FC = () => {
-  const { data: decks } = deckAPI.useFetchAllDecksQuery('');
+interface DeckContainerProps {
+  decks: IDeck[] | undefined;
+}
 
+const DeckContainer: React.FC<DeckContainerProps> = ({ decks }) => {
   return (
     <div className={cl.deckContainer}>
       {decks &&
@@ -14,7 +16,7 @@ const DeckContainer: React.FC = () => {
             key={deck.id}
             id={deck.id}
             title={deck.title}
-            totalWords={deck.totalWords}
+            totalCards={deck.totalCards}
             totalExercises={deck.totalExercises}
             dateLastExercise={deck.dateLastExercise}
           />

@@ -3,7 +3,7 @@ import { MoreButton, PlayButton } from '../UI/Buttons';
 import { IDeck } from '../../models/IDeck';
 import cl from './Deck.module.css';
 
-const Deck: React.FC<IDeck> = ({ id, title, totalWords, totalExercises, dateLastExercise }) => {
+const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise }) => {
   return (
     <article className={cl.deck}>
       <div className={cl.wrapper}>
@@ -12,7 +12,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalWords, totalExercises, dateLast
           <MoreButton />
         </div>
         <div className={cl.middle}>
-          <p className={cl.infoText}>Всего слов: {totalWords}</p>
+          <p className={cl.infoText}>Всего слов: {totalCards}</p>
           <p className={cl.infoText}>Упражнений: {totalExercises}</p>
         </div>
         <div className={cl.bottom}>
