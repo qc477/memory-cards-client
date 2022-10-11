@@ -4,6 +4,7 @@ import Title from '../Title';
 import IconButton from '../UI/IconButton';
 import Icons from '../Icons';
 import Button from '../UI/Button';
+import LabelNew from '../LabelNew';
 import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise }) => {
@@ -21,10 +22,17 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
           <p className={cl.infoText}>Упражнений: {totalExercises}</p>
         </div>
         <div className={cl.bottom}>
-          <time className={cl.date} dateTime={dateLastExercise}>
-            {dateLastExercise}
-          </time>
-          <Button startIcon={<Icons name='play' />}>Упражнение</Button>
+          <div className={cl.bottomLeft}></div>
+          <div className={cl.bottomRigth}>
+            {dateLastExercise === 'NEW' ? (
+              <LabelNew />
+            ) : (
+              <time className={cl.date} dateTime={dateLastExercise}>
+                {dateLastExercise}
+              </time>
+            )}
+            <Button startIcon={<Icons name='play' />}>Упражнение</Button>
+          </div>
         </div>
       </div>
     </article>
