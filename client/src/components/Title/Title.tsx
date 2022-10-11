@@ -8,7 +8,7 @@ enum TitleType {
 }
 
 interface TitleProps {
-  type?: TitleType;
+  type?: string;
   text: string;
 }
 

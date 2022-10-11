@@ -1,6 +1,7 @@
 import React from 'react';
 import { MoreButton, PlayButton } from '../UI/Buttons';
 import { IDeck } from '../../models/IDeck';
+import Title from '../Title';
 import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise }) => {
@@ -8,7 +9,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
     <article className={cl.deck}>
       <div className={cl.wrapper}>
         <div className={cl.top}>
-          <h3 className={cl.title}>{title}</h3>
+          <Title type='h3' text={title} />
           <MoreButton />
         </div>
         <div className={cl.middle}>
