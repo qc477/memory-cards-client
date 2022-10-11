@@ -19,7 +19,7 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
   title: string;
 
   @Column({ type: DataType.INTEGER, defaultValue: 0 })
-  totalWords: number;
+  totalCards: number;
 
   @Column({ type: DataType.INTEGER, defaultValue: 0 })
   totalExercises: number;
