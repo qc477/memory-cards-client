@@ -1,7 +1,9 @@
 import React from 'react';
-import { MoreButton, PlayButton } from '../UI/Buttons';
 import { IDeck } from '../../models/IDeck';
 import Title from '../Title';
+import IconButton from '../UI/IconButton';
+import Icons from '../Icons';
+import Button from '../UI/Button';
 import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise }) => {
@@ -10,7 +12,9 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
       <div className={cl.wrapper}>
         <div className={cl.top}>
           <Title type='h3' text={title} />
-          <MoreButton />
+          <IconButton color='dark'>
+            <Icons name='more' />
+          </IconButton>
         </div>
         <div className={cl.middle}>
           <p className={cl.infoText}>Всего слов: {totalCards}</p>
@@ -20,7 +24,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
           <time className={cl.date} dateTime={dateLastExercise}>
             {dateLastExercise}
           </time>
-          <PlayButton />
+          <Button startIcon={<Icons name='play' />}>Упражнение</Button>
         </div>
       </div>
     </article>
