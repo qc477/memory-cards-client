@@ -14,24 +14,24 @@
   background-color: var(--accent-strong-down);
 }
 
-.navItem:hover .navLink {
-  color: var(--accent-weak);
-}
-
-.navItem:hover .navIcon {
-  fill: var(--accent-weak);
-}
-
 .navLink {
   display: flex;
   align-items: center;
   padding: 1rem;
-  color: var(--accent-strong-text);
+  color: var(--base-strong);
   text-decoration: none;
+}
+
+.navItem:hover .navLink {
+  color: var(--accent-weak);
 }
 
 .navIcon {
   height: 2rem;
   margin-right: 0.5rem;
-  fill: var(--accent-strong-text);
+  fill: var(--base-strong);
+}
+
+.navItem:hover .navIcon {
+  fill: var(--accent-weak);
 }

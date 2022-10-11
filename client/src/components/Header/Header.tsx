@@ -19,11 +19,11 @@ const Header: React.FC = () => {
   return (
     <header className={cl.header}>
       <div className={cl.body}>
-        <IconButton color='light' _onClick={openMenu}>
+        <IconButton color='dark' _onClick={openMenu}>
           <Icons name='menu' />
         </IconButton>
         <Title text={titleText} />
-        <IconButton color='light'>
+        <IconButton color='dark'>
           <Icons name='add' />
         </IconButton>
       </div>

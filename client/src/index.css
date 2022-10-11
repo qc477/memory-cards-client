@@ -1,9 +1,9 @@
 :root {
   /* Colors */
-  --base-strong: #1c1c1c;
+  --base-strong: #37474f;
   --base-weak: #fff;
   --faint-strong: #808080;
-  --faint-weak: #f3f3f3;
+  --faint-weak: #f4f5fa;
   --faint-strong-up: #505050;
   --faint-strong-down: #d5d5d5;
   --faint-strong-line: #999;
@@ -31,5 +31,5 @@ body {
     'Helvetica Neue',
     Arial,
     sans-serif;
-  background-color: #f4f5f9;
+  background-color: var(--faint-weak);
 }
