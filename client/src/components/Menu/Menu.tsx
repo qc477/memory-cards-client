@@ -23,7 +23,7 @@ const Menu: React.FC = () => {
         <div className={cl.menu}>
           <div className={cl.menuHeader}>
             <Title text='Меню' />
-            <IconButton color='dark' _onClick={close}>
+            <IconButton color='faintStrongDown' _onClick={close}>
               <Icons name='close' />
             </IconButton>
           </div>
