@@ -13,7 +13,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
       <div className={cl.wrapper}>
         <div className={cl.top}>
           <Title type='h3' text={title} />
-          <IconButton color='dark'>
+          <IconButton color='faintStrongTextDown'>
             <Icons name='more' />
           </IconButton>
         </div>
