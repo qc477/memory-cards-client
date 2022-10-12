@@ -9,6 +9,8 @@
   color: var(--faint-strong);
 }
 
-.titleH3 {
-  font-weight: 600;
+.titleH2 {
+  font-size: 1.17rem;
+  font-weight: 500;
+  color: var(--faint-strong-text);
 }
