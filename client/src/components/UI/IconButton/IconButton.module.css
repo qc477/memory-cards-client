@@ -16,10 +16,14 @@
   height: 100%;
 }
 
-.baseStyles.light svg {
-  fill: var(--accent-weak);
+.baseStyles.faintStrong svg {
+  fill: var(--faint-strong);
 }
 
-.baseStyles.dark svg {
-  fill: var(--base-strong);
+.baseStyles.faintStrongDown svg {
+  fill: var(--faint-strong-down);
+}
+
+.baseStyles.faintStrongTextDown svg {
+  fill: var(--faint-strong-text-down);
 }
