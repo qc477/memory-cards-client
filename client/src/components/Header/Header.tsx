@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAppSelector } from 'hooks/redux';
 import { useDispatch } from 'react-redux';
 import { menuSlice } from '../../store/reducers/MenuSlice';
@@ -9,27 +9,16 @@ import cl from './Header.module.css';
 
 const Header: React.FC = () => {
   const { titleText } = useAppSelector((state) => state.headerReducer);
+  const { isScrollY } = useAppSelector((state) => state.appReducer);
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const handleScroll: EventListener = (event: Event) => {
-      if (window.scrollY > 0) {
-        alert(window.scrollY);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   function openMenu(): void {
     dispatch(setIsOpen(true));
   }
 
   return (
-    <header className={cl.header}>
+    <header className={isScrollY ? `${cl.header} ${cl.scroll}` : cl.header}>
       <div className={cl.body}>
         <IconButton color='faintStrong' _onClick={openMenu}>
           <Icons name='menu' />
