@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import appReducer from './reducers/AppSlice';
 import headerReducer from './reducers/HeaderSlice';
 import menuReducer from './reducers/MenuSlice';
 import { deckAPI } from '../services/DeckService';
 
 const rootReduser = combineReducers({
+  appReducer,
   headerReducer,
   menuReducer,
   [deckAPI.reducerPath]: deckAPI.reducer,
