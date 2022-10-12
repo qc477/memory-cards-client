@@ -11,27 +11,19 @@
 }
 
 .navItem:hover {
-  background-color: var(--accent-strong-down);
+  background-color: var(--faint-weak);
 }
 
 .navLink {
   display: flex;
   align-items: center;
   padding: 1rem;
-  color: var(--base-strong);
+  color: var(--faint-strong);
   text-decoration: none;
-}
-
-.navItem:hover .navLink {
-  color: var(--accent-weak);
 }
 
 .navIcon {
   height: 2rem;
   margin-right: 0.5rem;
-  fill: var(--base-strong);
-}
-
-.navItem:hover .navIcon {
-  fill: var(--accent-weak);
+  fill: var(--faint-strong);
 }
