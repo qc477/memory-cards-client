@@ -8,7 +8,7 @@ const SearchField: React.FC = () => {
   const [value, setValue] = useState<string>('');
 
   return (
-    <div className={`${cl.wrapper} ${isFocuse ? cl.wrapper : ''}`}>
+    <div className={`${cl.wrapper} ${isFocuse ? cl.focuse : ''}`}>
       <Icons className={cl.icon} name='search' />
       <input
         className={cl.input}
