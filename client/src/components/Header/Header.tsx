@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <Icons name='menu' />
         </IconButton>
         <Title text={titleText} />
-        <IconButton color='faintStrongDown'>
+        <IconButton color='faintStrong'>
           <Icons name='add' />
         </IconButton>
       </div>
