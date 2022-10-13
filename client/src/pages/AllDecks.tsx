@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { deckAPI } from '../services/DeckService';
 import { headerSlice } from '../store/reducers/HeaderSlice';
 import Main from '../components/Main';
-import AppContainer from '../components/AppContainer';
 import SearchField from '../components/UI/SearchField';
 import DeckContainer from '../components/DeckContainer';
 
@@ -18,10 +17,8 @@ const AllDecks: React.FC = () => {
 
   return (
     <Main>
-      <AppContainer>
-        <SearchField />
-        <DeckContainer decks={decks} />
-      </AppContainer>
+      <SearchField />
+      <DeckContainer decks={decks} />
     </Main>
   );
 };
