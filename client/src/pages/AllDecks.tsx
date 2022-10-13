@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deckAPI } from '../services/DeckService';
 import { headerSlice } from '../store/reducers/HeaderSlice';
-import Main from '../components/Main';
 import SearchField from '../components/UI/SearchField';
 import DeckContainer from '../components/DeckContainer';
+import cl from './AllDecks.module.css';
 
 const AllDecks: React.FC = () => {
   const { data: decks } = deckAPI.useFetchAllDecksQuery('');
@@ -16,10 +16,10 @@ const AllDecks: React.FC = () => {
   }, []);
 
   return (
-    <Main>
+    <main className={cl.main}>
       <SearchField />
       <DeckContainer decks={decks} />
-    </Main>
+    </main>
   );
 };
 
