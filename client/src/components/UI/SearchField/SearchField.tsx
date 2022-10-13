@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Icons from '../../Icons';
+import IconButton from '../IconButton';
 import cl from './SearchField.module.css';
 
 const SearchField: React.FC = () => {
@@ -7,16 +8,19 @@ const SearchField: React.FC = () => {
   const [value, setValue] = useState<string>('');
 
   return (
-    <div className={`${cl.searchField} ${isFocuse ? cl.searchFieldFocuse : ''}`}>
-      <Icons className={cl.searchFieldIcon} name='search' />
+    <div className={`${cl.wrapper} ${isFocuse ? cl.wrapper : ''}`}>
+      <Icons className={cl.icon} name='search' />
       <input
-        className={cl.searchFieldInput}
+        className={cl.input}
         type='text'
         placeholder='Поиск...'
         onChange={(event) => setValue(event.target.value)}
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />
+      <IconButton color='faintStrongTextDown'>
+        <Icons name='filter' />
+      </IconButton>
     </div>
   );
 };
