@@ -4,7 +4,6 @@ import { deckAPI } from '../services/DeckService';
 import { headerSlice } from '../store/reducers/HeaderSlice';
 import Main from '../components/Main';
 import AppContainer from '../components/AppContainer';
-import SortingBlock from '../components/SortingBlock';
 import DeckContainer from '../components/DeckContainer';
 
 const AllDecks: React.FC = () => {
@@ -19,7 +18,6 @@ const AllDecks: React.FC = () => {
   return (
     <Main>
       <AppContainer>
-        <SortingBlock />
         <DeckContainer decks={decks} />
       </AppContainer>
     </Main>
