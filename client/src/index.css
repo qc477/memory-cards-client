@@ -15,12 +15,28 @@
   --critic-strong: #ff4c51;
 }
 
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Rubik-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/Rubik-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
 body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family:
-    Inter,
+    Rubik,
     sans-serif,
     -apple-system,
     BlinkMacSystemFont,
