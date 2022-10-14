@@ -11,7 +11,7 @@
 }
 
 .navItem:hover {
-  background-color: var(--faint-weak);
+  background-color: var(--faint-weak-up);
 }
 
 .navLink {
