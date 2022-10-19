@@ -1,5 +1,6 @@
 import { Table, Model, Column, DataType, BelongsTo, ForeignKey } from 'sequelize-typescript';
 import { Deck } from '../../decks/model/decks.model';
+import { Group } from '../../groups/model/group.model';
 
 interface CardCreationAttrs {
   question: string;

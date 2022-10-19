@@ -1,5 +1,5 @@
-import { Model } from 'sequelize';
-import { Column, DataType, HasMany, Table } from 'sequelize-typescript';
+import { Model, Column, DataType, HasMany, Table } from 'sequelize-typescript';
+import { Card } from '../../cards/model/cards.model';
 
 interface GroupCreationAttrs {
   name: string;

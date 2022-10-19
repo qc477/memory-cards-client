@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Card } from './model/cards.model';
-import { Deck } from 'src/decks/model/decks.model';
+import { Deck } from '../decks/model/decks.model';
 import { CreateCardDto } from './dto/create-card.dto';
 
 @Injectable()
