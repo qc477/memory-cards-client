@@ -13,11 +13,12 @@ export class CardsService {
 
   async createCard(dto: CreateCardDto): Promise<Card> {
     const card = await this.cardRepository.create(dto);
-    const deck = await this.deckRepository.findOne({
-      where: { id: dto.deckId },
-    });
-    deck.totalCards = deck.totalCards + 1;
-    deck.save();
+    await this.deckRepository.increment(
+      { totalCards: 1 },
+      {
+        where: { id: dto.deckId },
+      }
+    );
     return card;
   }
 
