@@ -4,10 +4,10 @@ import { GroupsService } from './groups.service';
 
 @Controller('groups')
 export class GroupsController {
-  constructor(private groupService: GroupsService) {}
+  constructor(private groupsService: GroupsService) {}
 
   @Post()
   createGroup(@Body() groupDto: CreateGroupDto) {
-    return this.groupService.createGroup(groupDto);
+    return this.groupsService.create(groupDto);
   }
 }

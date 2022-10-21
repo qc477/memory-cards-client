@@ -1,11 +1,13 @@
-import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
-import { Card } from '../../cards/model/cards.model';
+import { BelongsToMany, Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
+import { Card } from 'src/cards/cards.model';
+import { DeckGroups } from 'src/deck-groups/deck-groups.model';
+import { Group } from 'src/groups/groups.model';
 
 interface DeckCreationAttrs {
   title: string;
 }
 
-@Table({ tableName: 'decks' })
+@Table({ tableName: 'decks', createdAt: false, updatedAt: false })
 export class Deck extends Model<Deck, DeckCreationAttrs> {
   @Column({
     type: DataType.INTEGER,
@@ -24,8 +26,11 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
   @Column({ type: DataType.INTEGER, defaultValue: 0 })
   totalExercises: number;
 
-  @Column({ type: DataType.STRING, defaultValue: 'NEW' })
-  dateLastExercise: string;
+  @Column({ type: DataType.DATE })
+  dateLastExercise: Date;
+
+  @BelongsToMany(() => Group, () => DeckGroups)
+  groups: Group[];
 
   @HasMany(() => Card)
   cards: Card[];

@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { Deck } from './decks/model/decks.model';
-import { Card } from './cards/model/cards.model';
-import { Group } from './groups/model/group.model';
+import { Deck } from './decks/decks.model';
+import { Card } from './cards/cards.model';
+import { Group } from './groups/groups.model';
 import { DecksModule } from './decks/decks.module';
 import { CardsModule } from './cards/cards.module';
 import { GroupsModule } from './groups/groups.module';
+import { DeckGroups } from './deck-groups/deck-groups.model';
 
 @Module({
   controllers: [],
@@ -22,7 +23,7 @@ import { GroupsModule } from './groups/groups.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Deck, Card, Group],
+      models: [Deck, Card, Group, DeckGroups],
       autoLoadModels: true,
     }),
     DecksModule,
