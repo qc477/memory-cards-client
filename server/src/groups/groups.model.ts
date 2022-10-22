@@ -5,7 +5,7 @@ interface GroupCreationAttrs {
   name: string;
 }
 
-@Table({ tableName: 'group', createdAt: false, updatedAt: false })
+@Table({ tableName: 'groups', createdAt: false, updatedAt: false })
 export class Group extends Model<Group, GroupCreationAttrs> {
   @Column({
     type: DataType.INTEGER,
