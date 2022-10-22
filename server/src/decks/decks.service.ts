@@ -1,13 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Group } from 'src/groups/groups.model';
-import { GroupsService } from 'src/groups/groups.service';
 import { Deck } from './decks.model';
 import { CreateDeckDto } from './dto/create-deck.dto';
 
 @Injectable()
 export class DecksService {
-  constructor(@InjectModel(Deck) private deckRepository: typeof Deck, private groupsService: GroupsService) {}
+  constructor(@InjectModel(Deck) private deckRepository: typeof Deck) {}
 
   async createDeck(dto: CreateDeckDto): Promise<Deck> {
     const deck = await this.deckRepository.create(dto);
@@ -15,7 +13,7 @@ export class DecksService {
   }
 
   async getAllDecks(): Promise<Deck[]> {
-    const decks = await this.deckRepository.findAll({include: {model: Group}});
+    const decks = await this.deckRepository.findAll();
     return decks;
   }
 
@@ -24,14 +22,7 @@ export class DecksService {
     return id;
   }
 
-  async incTotalCards(deckId: number) {
+  async incrementTotalCards(deckId: number) {
     await this.deckRepository.increment({ totalCards: 1 }, { where: { id: deckId } });
-  }
-
-  async setGroupId(deckId: number, groupId: number) {
-    const deck = await this.deckRepository.findOne({ where: { id: deckId } });
-    const group = await this.groupsService.getGroupById(groupId);
-    await deck.$set('groups', [group.id]);
-    deck.groups = [group];
   }
 }

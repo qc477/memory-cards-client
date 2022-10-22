@@ -1,7 +1,5 @@
-import { BelongsToMany, Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
 import { Card } from 'src/cards/cards.model';
-import { DeckGroups } from 'src/deck-groups/deck-groups.model';
-import { Group } from 'src/groups/groups.model';
 
 interface DeckCreationAttrs {
   title: string;
@@ -28,9 +26,6 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
 
   @Column({ type: DataType.DATE })
   dateLastExercise: Date;
-
-  @BelongsToMany(() => Group, () => DeckGroups)
-  groups: Group[];
 
   @HasMany(() => Card)
   cards: Card[];

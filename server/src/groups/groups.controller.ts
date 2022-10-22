@@ -8,6 +8,6 @@ export class GroupsController {
 
   @Post()
   createGroup(@Body() groupDto: CreateGroupDto) {
-    return this.groupsService.create(groupDto);
+    return this.groupsService.createGroup(groupDto);
   }
 }

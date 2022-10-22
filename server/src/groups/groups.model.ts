@@ -1,7 +1,5 @@
-import { Model, Column, DataType, Table, BelongsToMany, HasMany } from 'sequelize-typescript';
+import { Model, Column, DataType, Table, HasMany } from 'sequelize-typescript';
 import { Card } from 'src/cards/cards.model';
-import { DeckGroups } from 'src/deck-groups/deck-groups.model';
-import { Deck } from 'src/decks/decks.model';
 
 interface GroupCreationAttrs {
   name: string;
@@ -22,7 +20,4 @@ export class Group extends Model<Group, GroupCreationAttrs> {
 
   @HasMany(() => Card)
   cards: Card[];
-
-  @BelongsToMany(() => Deck, () => DeckGroups)
-  decks: Deck[];
 }

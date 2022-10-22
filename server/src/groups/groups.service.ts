@@ -7,15 +7,7 @@ import { Group } from './groups.model';
 export class GroupsService {
   constructor(@InjectModel(Group) private groupRepository: typeof Group) {}
 
-  async create(dto: CreateGroupDto) {
+  async createGroup(dto: CreateGroupDto) {
     return await this.groupRepository.create(dto);
-  }
-
-  async getFirstGroup() {
-    return await this.groupRepository.findOne({ order: [['id', 'ASC']] });
-  }
-
-  async getGroupById(groupId: number) {
-    return await this.groupRepository.findOne({ where: { id: groupId } });
   }
 }
