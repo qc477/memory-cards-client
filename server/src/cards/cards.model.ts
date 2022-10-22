@@ -6,6 +6,7 @@ interface CardCreationAttrs {
   question: string;
   answer: string;
   deckId: number;
+  groupId: number;
 }
 
 @Table({ tableName: 'cards', createdAt: false, updatedAt: false })

@@ -10,4 +10,8 @@ export class GroupStatisticsService {
   async createGroupStatistics(dto: CreateGroupStatisticsDto) {
     await this.groupStatisticsRepository.create(dto);
   }
+
+  async incrementTotalCards(deckId: number, groupId: number): Promise<void> {
+    await this.groupStatisticsRepository.increment({ totalCards: 1 }, { where: { deckId: deckId, groupId: groupId } });
+  }
 }
