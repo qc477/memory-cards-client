@@ -1,5 +1,6 @@
 import { Table, Model, Column, DataType, BelongsTo, ForeignKey } from 'sequelize-typescript';
 import { Deck } from 'src/decks/decks.model';
+import { Group } from 'src/groups/groups.model';
 
 interface CardCreationAttrs {
   question: string;
@@ -29,4 +30,11 @@ export class Card extends Model<Card, CardCreationAttrs> {
 
   @BelongsTo(() => Deck)
   deck: Deck;
+
+  @ForeignKey(() => Group)
+  @Column({ type: DataType.INTEGER })
+  groupId: number;
+
+  @BelongsTo(() => Group)
+  group: Group;
 }
