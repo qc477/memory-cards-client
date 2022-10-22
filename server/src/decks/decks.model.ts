@@ -1,5 +1,6 @@
 import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
 import { Card } from 'src/cards/cards.model';
+import { GroupStatistics } from 'src/groupStatistics/groupStatistics.model';
 
 interface DeckCreationAttrs {
   title: string;
@@ -29,4 +30,7 @@ export class Deck extends Model<Deck, DeckCreationAttrs> {
 
   @HasMany(() => Card)
   cards: Card[];
+
+  @HasMany(() => GroupStatistics)
+  groupStatistics: GroupStatistics[];
 }

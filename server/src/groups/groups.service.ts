@@ -5,9 +5,14 @@ import { Group } from './groups.model';
 
 @Injectable()
 export class GroupsService {
-  constructor(@InjectModel(Group) private groupRepository: typeof Group) {}
+  constructor(@InjectModel(Group) private groupRepository: typeof Group) { }
 
-  async createGroup(dto: CreateGroupDto) {
-    return await this.groupRepository.create({...dto, name: dto.name.toLowerCase()});
+  async createGroup(dto: CreateGroupDto): Promise<Group> {
+    return await this.groupRepository.create({ ...dto, name: dto.name.toLowerCase() });
+  }
+
+  async getFirstGroup(): Promise<Group> {
+    const firstGroup = this.groupRepository.findOne({ order: [['id', 'ASC']] });
+    return firstGroup;
   }
 }
