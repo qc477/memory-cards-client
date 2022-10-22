@@ -7,7 +7,6 @@ import { Group } from './groups/groups.model';
 import { DecksModule } from './decks/decks.module';
 import { CardsModule } from './cards/cards.module';
 import { GroupsModule } from './groups/groups.module';
-import { DeckGroups } from './deck-groups/deck-groups.model';
 
 @Module({
   controllers: [],
@@ -23,7 +22,7 @@ import { DeckGroups } from './deck-groups/deck-groups.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [Deck, Card, Group, DeckGroups],
+      models: [Deck, Card, Group],
       autoLoadModels: true,
     }),
     DecksModule,
