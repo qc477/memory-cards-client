@@ -1,0 +1,29 @@
+.navList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navItem,
+.navLink,
+.navIcon {
+  transition: 0.2s;
+}
+
+.navItem:hover {
+  background-color: var(--faint-weak-up);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: var(--faint-strong);
+  text-decoration: none;
+}
+
+.navIcon {
+  height: 2rem;
+  margin-right: 0.5rem;
+  fill: var(--faint-strong);
+}
