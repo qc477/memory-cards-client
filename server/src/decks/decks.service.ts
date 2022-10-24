@@ -12,17 +12,23 @@ export class DecksService {
     @InjectModel(Deck) private deckRepository: typeof Deck,
     private groupStatisticsService: GroupStatisticsService,
     private groupsService: GroupsService
-  ) { }
+  ) {}
 
   async createDeck(dto: CreateDeckDto): Promise<Deck> {
     const deck = await this.deckRepository.create(dto);
     const firstGroup = await this.groupsService.getFirstGroup();
-    await this.groupStatisticsService.createGroupStatistics({ deckId: deck.id, groupId: firstGroup.id });
+    await this.groupStatisticsService.createGroupStatistics({
+      deckId: deck.id,
+      groupId: firstGroup.id,
+      groupName: firstGroup.name,
+    });
     return deck;
   }
 
   async getAllDecks(): Promise<Deck[]> {
-    const decks = await this.deckRepository.findAll({ include: { model: GroupStatistics } });
+    const decks = await this.deckRepository.findAll({
+      include: { model: GroupStatistics, attributes: ['groupId', 'groupName', 'totalCards'] },
+    });
     return decks;
   }
 

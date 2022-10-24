@@ -2,7 +2,11 @@ import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from 'sequelize
 import { Deck } from 'src/decks/decks.model';
 import { Group } from 'src/groups/groups.model';
 
-interface GroupStatisticsCreationAttrs {}
+interface GroupStatisticsCreationAttrs {
+  deckId: number;
+  groupId: number;
+  groupName: string;
+}
 
 @Table({ tableName: 'group_statistics', createdAt: false, updatedAt: false })
 export class GroupStatistics extends Model<GroupStatistics, GroupStatisticsCreationAttrs> {
@@ -27,6 +31,9 @@ export class GroupStatistics extends Model<GroupStatistics, GroupStatisticsCreat
 
   @BelongsTo(() => Group)
   group: Group;
+
+  @Column({ type: DataType.STRING })
+  groupName: string;
 
   @Column({ type: DataType.INTEGER, defaultValue: 0 })
   totalCards: number;
