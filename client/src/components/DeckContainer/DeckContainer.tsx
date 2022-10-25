@@ -1,6 +1,6 @@
-import { IDeck } from 'models/IDeck';
 import React from 'react';
-import Deck from '../Deck';
+import { IDeck } from 'models/IDeck';
+import Deck from 'components/Deck';
 import cl from './DeckContainer.module.css';
 
 interface DeckContainerProps {
@@ -19,6 +19,7 @@ const DeckContainer: React.FC<DeckContainerProps> = ({ decks }) => {
             totalCards={deck.totalCards}
             totalExercises={deck.totalExercises}
             dateLastExercise={deck.dateLastExercise}
+            groupStatistics={deck.groupStatistics}
           />
         ))}
     </div>

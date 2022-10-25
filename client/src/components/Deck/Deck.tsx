@@ -1,13 +1,14 @@
 import React from 'react';
-import { IDeck } from '../../models/IDeck';
-import Title from '../Title';
-import IconButton from '../UI/IconButton';
-import Icons from '../Icons';
-import Button from '../UI/Button';
-import LabelNew from '../LabelNew';
+import { IDeck } from 'models/IDeck';
+import Title from 'components/Title';
+import IconButton from 'components/UI/IconButton';
+import Icons from 'components/Icons';
+import Button from 'components/UI/Button';
+import LabelNew from 'components/LabelNew';
+import GroupStatistics from 'components/GroupStatistics';
 import cl from './Deck.module.css';
 
-const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise }) => {
+const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groupStatistics }) => {
   return (
     <article className={cl.deck}>
       <div className={cl.wrapper}>
@@ -22,9 +23,11 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
           <p className={cl.infoText}>Упражнений: {totalExercises}</p>
         </div>
         <div className={cl.bottom}>
-          <div className={cl.bottomLeft}></div>
+          <div className={cl.bottomLeft}>
+            <GroupStatistics labels={groupStatistics} />
+          </div>
           <div className={cl.bottomRigth}>
-            {dateLastExercise === 'NEW' ? (
+            {dateLastExercise === null ? (
               <LabelNew />
             ) : (
               <time className={cl.date} dateTime={dateLastExercise}>
