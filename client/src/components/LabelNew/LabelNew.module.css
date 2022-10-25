@@ -1,9 +1,0 @@
-.labelNew {
-  display: inline-block;
-  padding: .14em .32em;
-  font-size: .875rem;
-  font-weight: 500;
-  color: var(--base-weak);
-  background-color: var(--critic-strong);
-  border-radius: 8em;
-}
