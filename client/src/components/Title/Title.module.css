@@ -1,0 +1,16 @@
+.title {
+  padding: 0;
+  margin: 0;
+}
+
+.titleH1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--faint-strong);
+}
+
+.titleH2 {
+  font-size: 1.17rem;
+  font-weight: 500;
+  color: var(--faint-strong-text);
+}
