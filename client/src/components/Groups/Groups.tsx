@@ -9,7 +9,7 @@ interface GroupsProps {
 
 const Groups: React.FC<GroupsProps> = ({ groups }) => {
   return (
-    <div className={cl.wrapper}>
+    <div className={cl.groups}>
       <GroupLabel key={1} name={"a"} totalCards={500} />
       <GroupLabel key={2} name={"b"} totalCards={400} />
       <GroupLabel key={3} name={"c"} totalCards={300} />
