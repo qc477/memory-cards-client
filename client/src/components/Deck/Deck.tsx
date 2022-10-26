@@ -5,7 +5,7 @@ import IconButton from 'components/UI/IconButton';
 import Icons from 'components/Icons';
 import Button from 'components/UI/Button';
 import LabelNew from 'components/LabelNew';
-import GroupStatistics from 'components/GroupStatistics';
+import Groups from 'components/Groups';
 import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groupStatistics }) => {
@@ -24,7 +24,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
         </div>
         <div className={cl.bottom}>
           <div className={cl.bottomLeft}>
-            <GroupStatistics labels={groupStatistics} />
+            <Groups groups={groupStatistics} />
           </div>
           <div className={cl.bottomRigth}>
             {dateLastExercise === null ? (

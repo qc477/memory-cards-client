@@ -1,4 +1,4 @@
-import { IGroupLabel } from './IGroupLabel';
+import { IGroup } from './IGroup';
 
 export interface IDeck {
   id: number;
@@ -6,5 +6,5 @@ export interface IDeck {
   totalCards: number;
   totalExercises: number;
   dateLastExercise: string;
-  groupStatistics: IGroupLabel[];
+  groupStatistics: IGroup[];
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import cl from './Group.module.css';
+import cl from './GroupLabel.module.css';
 
-interface GroupProps {
-  groupName: string;
+interface GroupLabelProps {
+  name: string;
   totalCards: number;
 }
 
@@ -14,36 +14,36 @@ enum GroupNames {
   E = 'e',
 }
 
-const Group: React.FC<GroupProps> = ({ groupName, totalCards }) => {
-  switch (groupName) {
+const GroupLabel: React.FC<GroupLabelProps> = ({ name, totalCards }) => {
+  switch (name) {
     case GroupNames.A:
       return (
         <span className={`${cl.group} ${cl.firstGroup}`}>
-          {groupName.toUpperCase()}: {totalCards}
+          {name.toUpperCase()}: {totalCards}
         </span>
       );
     case GroupNames.B:
       return (
         <span className={`${cl.group} ${cl.secondGroup}`}>
-          {groupName.toUpperCase()}: {totalCards}
+          {name.toUpperCase()}: {totalCards}
         </span>
       );
     case GroupNames.C:
       return (
         <span className={`${cl.group} ${cl.thirdGroup}`}>
-          {groupName.toUpperCase()}: {totalCards}
+          {name.toUpperCase()}: {totalCards}
         </span>
       );
     case GroupNames.D:
       return (
         <span className={`${cl.group} ${cl.fourthGroup}`}>
-          {groupName.toUpperCase()}: {totalCards}
+          {name.toUpperCase()}: {totalCards}
         </span>
       );
     case GroupNames.E:
       return (
         <span className={`${cl.group} ${cl.fifthGroup}`}>
-          {groupName.toUpperCase()}: {totalCards}
+          {name.toUpperCase()}: {totalCards}
         </span>
       );
     default:
@@ -51,4 +51,4 @@ const Group: React.FC<GroupProps> = ({ groupName, totalCards }) => {
   }
 };
 
-export default Group;
+export default GroupLabel;
