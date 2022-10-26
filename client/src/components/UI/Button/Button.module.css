@@ -10,8 +10,8 @@
   cursor: pointer;
   background-color: var(--accent-strong);
   border: none;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 12%);
+  border-radius: 0.43em;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
   transition: 0.2s;
 }
 
@@ -23,5 +23,4 @@
 
 .button:hover {
   background-color: var(--accent-strong-up);
-  box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
 }
