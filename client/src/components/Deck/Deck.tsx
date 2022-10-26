@@ -10,35 +10,31 @@ import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groupStatistics }) => {
   return (
-    <article className={cl.deck}>
-      <div className={cl.wrapper}>
-        <div className={cl.top}>
-          <Title type='h2' text={title} />
-          <IconButton color='faintStrongTextDown'>
-            <Icons name='more' />
-          </IconButton>
-        </div>
-        <div className={cl.middle}>
-          <p className={cl.infoText}>Карточек: {totalCards}</p>
-          <p className={cl.infoText}>Упражнений: {totalExercises}</p>
-        </div>
-        <div className={cl.bottom}>
-          <div className={cl.bottomLeft}>
-            <Groups groups={groupStatistics} />
-          </div>
-          <div className={cl.bottomRigth}>
-            {dateLastExercise === null ? (
-              <LabelNew />
-            ) : (
-              <time className={cl.date} dateTime={dateLastExercise}>
-                {dateLastExercise}
-              </time>
-            )}
-            <Button startIcon={<Icons name='play' />}>Упражнение</Button>
-          </div>
+    <div className={cl.deck}>
+      <div className={cl.deckHeader}>
+        <Title type='h2' text={title} />
+        <IconButton color='faintStrongTextDown'>
+          <Icons name='more' />
+        </IconButton>
+      </div>
+      <div className={cl.deckBody}>
+        <p className={cl.deckLabel}>Карточек: {totalCards}</p>
+        <p className={cl.deckLabel}>Упражнений: {totalExercises}</p>
+      </div>
+      <div className={cl.deckFooter}>
+        <Groups groups={groupStatistics} />
+        <div className={cl.deckWrapper}>
+          {dateLastExercise === null ? (
+            <LabelNew />
+          ) : (
+            <time className={cl.date} dateTime={dateLastExercise}>
+              {dateLastExercise}
+            </time>
+          )}
+          <Button startIcon={<Icons name='play' />}>Упражнение</Button>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 
