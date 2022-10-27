@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-import Icons from '../../Icons';
-import IconButton from '../IconButton';
-import cl from './SearchField.module.css';
+import cl from './Input.module.css';
 
-const SearchField: React.FC = () => {
+interface InputProps {
+  startIcon?: React.ReactNode;
+  placeholder?: string;
+  isClearButton?: boolean;
+}
+
+const Input: React.FC<InputProps> = ({ startIcon, placeholder, isClearButton = false }) => {
   const [isFocuse, setIsFocuse] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
 
   return (
     <div className={`${cl.wrapper} ${isFocuse ? cl.focuse : ''}`}>
-      <Icons className={cl.icon} name='search' />
+      {startIcon}
       <input
         className={cl.input}
         type='text'
-        placeholder='Поиск...'
+        placeholder={placeholder}
         onChange={(event) => setValue(event.target.value)}
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />
-      <IconButton color='faintStrongTextDown'>
-        <Icons name='filter' />
-      </IconButton>
+      {isClearButton ? 'x' : null}
     </div>
   );
 };
 
-export default SearchField;
+export default Input;
