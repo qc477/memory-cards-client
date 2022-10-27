@@ -6,19 +6,9 @@
   list-style: none;
 }
 
-.navItem,
 .navLink,
 .navIcon {
   transition: 0.2s;
-}
-
-.navItem {
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-}
-
-.navItem:hover {
-  background-color: var(--faint-weak-up);
 }
 
 .navLink {
@@ -27,10 +17,26 @@
   padding: 1rem 0.75rem;
   color: var(--faint-strong);
   text-decoration: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.navLink:hover {
+  background-color: var(--faint-weak-up);
 }
 
 .navIcon {
   height: 2rem;
   margin-right: 0.5rem;
   fill: var(--faint-strong);
+}
+
+.navLink.active {
+  color: var(--base-weak);
+  background-color: var(--accent-strong);
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 25%);
+}
+
+.navLink.active .navIcon {
+  fill: var(--base-weak);
 }
