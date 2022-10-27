@@ -10,7 +10,7 @@
   cursor: pointer;
   background-color: var(--accent-strong);
   border: none;
-  border-radius: 0.43em;
+  border-radius: 0.57em;
   box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
   transition: 0.2s;
 }
