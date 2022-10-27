@@ -1,6 +1,8 @@
 .navList {
+  display: grid;
+  row-gap: 0.25rem;
   padding: 0;
-  margin: 0;
+  margin: 0 1rem 0 0;
   list-style: none;
 }
 
@@ -10,6 +12,11 @@
   transition: 0.2s;
 }
 
+.navItem {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
 .navItem:hover {
   background-color: var(--faint-weak-up);
 }
@@ -17,7 +24,7 @@
 .navLink {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0.75rem;
   color: var(--faint-strong);
   text-decoration: none;
 }

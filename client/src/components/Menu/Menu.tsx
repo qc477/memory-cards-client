@@ -21,7 +21,7 @@ const Menu: React.FC = () => {
     <div className={isOpen ? `${cl.menu} ${cl.open}` : cl.menu} onClick={close}>
       <div className={isOpen ? `${cl.menuContent} ${cl.open}` : cl.menuContent} onClick={(e) => e.stopPropagation()}>
         <div className={cl.menuHeader}>
-          <Title text='Меню' />
+          <Title text='MemoryCards' />
           <IconButton color='faintStrongDown' _onClick={close}>
             <Icons name='close' />
           </IconButton>

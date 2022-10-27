@@ -4,7 +4,7 @@ import Icons from '../Icons';
 import cl from './Navigation.module.css';
 
 enum NavigationPath {
-  ACCOUNT = 'account',
+  DECKS = 'decks',
   SETTINGS = 'settings',
   ABOUT = 'about',
   DONATION = 'donation',
@@ -16,9 +16,9 @@ const Navigation: React.FC = () => {
     <nav>
       <ul className={cl.navList}>
         <li className={cl.navItem}>
-          <NavLink to={NavigationPath.ACCOUNT} className={cl.navLink}>
+          <NavLink to={NavigationPath.DECKS} className={cl.navLink}>
             <Icons className={cl.navIcon} name='account' />
-            Аккаунт
+            Колоды
           </NavLink>
         </li>
         <li className={cl.navItem}>
