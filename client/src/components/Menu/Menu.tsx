@@ -1,12 +1,12 @@
 import React from 'react';
-import { useAppSelector } from 'hooks/redux';
-import { useDispatch } from 'react-redux';
-import { menuSlice } from '../../store/reducers/MenuSlice';
-import Title from '../Title';
-import IconButton from '../UI/IconButton';
-import Icons from '../Icons';
-import Navigation from '../Navigation';
 import cl from './Menu.module.css';
+import { useAppSelector } from 'hooks/redux';
+import { menuSlice } from 'store/reducers/MenuSlice';
+import { useDispatch } from 'react-redux';
+import Title from 'components/Title';
+import IconButton from 'components/UI/IconButton';
+import Icons from 'components/Icons';
+import Navigation from 'components/Navigation';
 
 const Menu: React.FC = () => {
   const { isOpen } = useAppSelector((state) => state.menuReducer);
@@ -18,17 +18,15 @@ const Menu: React.FC = () => {
   }
 
   return (
-    <div className={isOpen ? cl.menuOpen : cl.menuClose} onClick={close}>
-      <div className={cl.menuWrapper}>
-        <div className={cl.menu}>
-          <div className={cl.menuHeader}>
-            <Title text='Меню' />
-            <IconButton color='faintStrongDown' _onClick={close}>
-              <Icons name='close' />
-            </IconButton>
-          </div>
-          <Navigation />
+    <div className={isOpen ? `${cl.menu} ${cl.open}` : cl.menu} onClick={close}>
+      <div className={isOpen ? `${cl.menuContent} ${cl.open}` : cl.menuContent} onClick={(e) => e.stopPropagation()}>
+        <div className={cl.menuHeader}>
+          <Title text='Меню' />
+          <IconButton color='faintStrongDown' _onClick={close}>
+            <Icons name='close' />
+          </IconButton>
         </div>
+        <Navigation />
       </div>
     </div>
   );
