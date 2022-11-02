@@ -21,23 +21,25 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
         <p className={cl.deckLabel}>Карточек: {totalCards}</p>
         <p className={cl.deckLabel}>Упражнений: {totalExercises}</p>
       </div>
-      {totalCards === 0 ? (
-        <Label text='Черновик' color='gray' />
-      ) : (
-        <div className={cl.deckFooter}>
-          <Groups groups={groupStatistics} />
-          <div className={cl.deckWrapper}>
-            {dateLastExercise === null ? (
-              <Label text='New' color='critical' />
-            ) : (
-              <time className={cl.date} dateTime={dateLastExercise}>
-                {dateLastExercise}
-              </time>
-            )}
-            <Button startIcon={<Icons name='play' />}>Упражнение</Button>
+      <div className={cl.deckFooter}>
+        {totalCards === 0 ? (
+          <div>
+            <Label text='Черновик' color='gray' />
           </div>
+        ) : (
+          <Groups groups={groupStatistics} />
+        )}
+        <div className={cl.deckWrapper}>
+          {dateLastExercise === null ? (
+            <Label text='New' color='critical' />
+          ) : (
+            <time className={cl.date} dateTime={dateLastExercise}>
+              {dateLastExercise}
+            </time>
+          )}
+          <Button startIcon={<Icons name='play' />}>Упражнение</Button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
