@@ -1,0 +1,17 @@
+.label {
+  display: inline-block;
+  padding: 0.285em 0.571em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8em;
+}
+
+.colorCritical {
+  color: var(--base-weak);
+  background-color: var(--critic-strong);
+}
+
+.colorGray {
+  color: var(--faint-weak);
+  background-color: var(--faint-strong);
+}
