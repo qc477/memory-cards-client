@@ -8,6 +8,8 @@ import cl from './Deck.module.css';
 import Label from 'components/UI/Label';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groups }) => {
+  const isDisabledButton = totalCards === 0 ? true : false;
+
   return (
     <div className={cl.deck}>
       <div className={cl.deckHeader}>
@@ -22,29 +24,23 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
       </div>
       <div className={cl.deckFooter}>
         <div className={cl.deckInfoBlock}>
-          {totalCards === 0 ? (
-            <Label text='Черновик' color='grayStrong' />
-          ) : (
-            groups.map((group) => (
-              <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='grayWeak' />
-            ))
-          )}
+          {groups.map((group) => (
+            <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='grayWeak' />
+          ))}
         </div>
         <div className={cl.deckWrapper}>
-          {dateLastExercise === null ? (
+          {dateLastExercise === null && totalCards > 0 ? (
             <Label text='New' color='critical' />
+          ) : dateLastExercise === null && totalCards === 0 ? (
+            <Label text='Черновик' color='grayStrong' />
           ) : (
             <time className={cl.date} dateTime={dateLastExercise}>
               {dateLastExercise}
             </time>
           )}
-          {totalCards === 0 ? (
-            <Button startIcon={<Icons name='play' />} disabled>
-              Упражнение
-            </Button>
-          ) : (
-            <Button startIcon={<Icons name='play' />}>Упражнение</Button>
-          )}
+          <Button startIcon={<Icons name='play' />} disabled={isDisabledButton}>
+            Упражнение
+          </Button>
         </div>
       </div>
     </div>
