@@ -38,7 +38,13 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
               {dateLastExercise}
             </time>
           )}
-          <Button startIcon={<Icons name='play' />}>Упражнение</Button>
+          {totalCards === 0 ? (
+            <Button startIcon={<Icons name='play' />} disabled>
+              Упражнение
+            </Button>
+          ) : (
+            <Button startIcon={<Icons name='play' />}>Упражнение</Button>
+          )}
         </div>
       </div>
     </div>
