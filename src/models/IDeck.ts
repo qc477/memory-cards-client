@@ -6,5 +6,5 @@ export interface IDeck {
   totalCards: number;
   totalExercises: number;
   dateLastExercise: string;
-  groupStatistics: IGroup[];
+  groups: IGroup[];
 }

@@ -15,16 +15,6 @@
   --critic-strong: #ff4c51;
   --success-strong: #56ca00;
   --success-weak: #eaf9e0;
-
-  /* Group Colors */
-  --first-group-strong: #8a8d93;
-  --first-group-weak: #f0f0f1;
-  --second-group-strong: #7d9d6f;
-  --second-group-weak: #f0f3ee;
-  --third-group-strong: #70ac4a;
-  --third-group-weak: #eef5ea;
-  --fourth-group-strong: #63bb25;
-  --fourth-group-weak: #edf7e5;
 }
 
 @font-face {

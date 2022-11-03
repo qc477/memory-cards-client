@@ -26,6 +26,12 @@
   margin-top: 0.5rem;
 }
 
+.deckInfoBlock {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .deckWrapper {
   display: grid;
   grid-template-columns: max-content max-content;

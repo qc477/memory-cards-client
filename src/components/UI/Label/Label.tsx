@@ -8,7 +8,8 @@ interface LabelProps {
 
 enum Colors {
   CRITICAL = 'critical',
-  GRAY = 'gray',
+  GRAY_STRONG = 'grayStrong',
+  GRAY_WEAK = 'grayWeak',
 }
 
 const Label: React.FC<LabelProps> = ({ text, color }) => {
@@ -16,14 +17,20 @@ const Label: React.FC<LabelProps> = ({ text, color }) => {
     switch (color) {
       case Colors.CRITICAL:
         return cl.colorCritical;
-      case Colors.GRAY:
-        return cl.colorGray;
+      case Colors.GRAY_STRONG:
+        return cl.colorGrayStrong;
+      case Colors.GRAY_WEAK:
+        return cl.colorGrayWeak;
       default:
         return '';
     }
   }
 
-  return <span className={`${cl.label} ${getColorClassName()}`}>{text}</span>;
+  return (
+    <div>
+      <span className={`${cl.label} ${getColorClassName()}`}>{text}</span>
+    </div>
+  );
 };
 
 export default Label;

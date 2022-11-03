@@ -30,7 +30,7 @@ const AllDecks: React.FC = () => {
                 totalCards={deck.totalCards}
                 totalExercises={deck.totalExercises}
                 dateLastExercise={deck.dateLastExercise}
-                groupStatistics={deck.groupStatistics}
+                groups={deck.groups}
               />
             </Card>
           ))}

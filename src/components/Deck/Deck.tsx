@@ -4,11 +4,10 @@ import Title from 'components/Title';
 import IconButton from 'components/UI/IconButton';
 import Icons from 'components/Icons';
 import Button from 'components/UI/Button';
-import Groups from 'components/Groups';
 import cl from './Deck.module.css';
 import Label from 'components/UI/Label';
 
-const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groupStatistics }) => {
+const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groups }) => {
   return (
     <div className={cl.deck}>
       <div className={cl.deckHeader}>
@@ -22,13 +21,15 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
         <p className={cl.deckLabel}>Упражнений: {totalExercises}</p>
       </div>
       <div className={cl.deckFooter}>
-        {totalCards === 0 ? (
-          <div>
-            <Label text='Черновик' color='gray' />
-          </div>
-        ) : (
-          <Groups groups={groupStatistics} />
-        )}
+        <div className={cl.deckInfoBlock}>
+          {totalCards === 0 ? (
+            <Label text='Черновик' color='grayStrong' />
+          ) : (
+            groups.map((group) => (
+              <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='grayWeak' />
+            ))
+          )}
+        </div>
         <div className={cl.deckWrapper}>
           {dateLastExercise === null ? (
             <Label text='New' color='critical' />
