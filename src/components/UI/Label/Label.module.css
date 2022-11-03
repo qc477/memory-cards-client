@@ -11,12 +11,12 @@
   background-color: var(--critic-strong);
 }
 
-.colorGrayStrong {
+.colorGray {
   color: var(--faint-weak);
   background-color: var(--faint-strong);
 }
 
-.colorGrayWeak {
-  color: #8a8d93;
-  background-color: #f0f0f1;
+.colorSuccess {
+  color: var(--success-strong);
+  background-color: var(--success-weak);
 }

@@ -25,14 +25,14 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
       <div className={cl.deckFooter}>
         <div className={cl.deckInfoBlock}>
           {groups.map((group) => (
-            <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='grayWeak' />
+            <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='success' />
           ))}
         </div>
         <div className={cl.deckWrapper}>
           {dateLastExercise === null && totalCards > 0 ? (
             <Label text='New' color='critical' />
           ) : dateLastExercise === null && totalCards === 0 ? (
-            <Label text='Черновик' color='grayStrong' />
+            <Label text='Черновик' color='gray' />
           ) : (
             <time className={cl.date} dateTime={dateLastExercise}>
               {dateLastExercise}
