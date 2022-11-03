@@ -29,10 +29,8 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
           ))}
         </div>
         <div className={cl.deckWrapper}>
-          {dateLastExercise === null && totalCards > 0 ? (
+          {dateLastExercise === null ? (
             <Label text='New' color='critical' />
-          ) : dateLastExercise === null && totalCards === 0 ? (
-            <Label text='Черновик' color='gray' />
           ) : (
             <time className={cl.date} dateTime={dateLastExercise}>
               {dateLastExercise}
