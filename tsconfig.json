@@ -19,13 +19,13 @@
     "noEmitOnError": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/types/*": ["src/types/*"],
-      "@/components/*": ["src/components/*"],
-      "@/UI/*": ["src/components/UI/*"],
-      "@/services/*": ["src/services/*"],
-      "@/store/*": ["src/store/*"],
-      "@/hooks/*": ["src/hooks/*"]
+      "@Models/*": ["src/models/*"],
+      "@Components/*": ["src/components/*"],
+      "@UI/*": ["src/components/UI/*"],
+      "@Services/*": ["src/services/*"],
+      "@Store/*": ["src/store/*"],
+      "@Hooks/*": ["src/hooks/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/declaration.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "src/declaration.d.ts"]
 }

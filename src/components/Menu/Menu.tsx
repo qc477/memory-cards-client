@@ -1,12 +1,12 @@
+import Icons from '@Components/Icons';
+import Navigation from '@Components/Navigation';
+import Title from '@Components/Title';
+import IconButton from '@Components/UI/IconButton';
+import { useAppSelector } from '@Hooks/redux';
+import { menuSlice } from '@Store/reducers/MenuSlice';
 import React from 'react';
-import cl from './Menu.module.css';
-import { useAppSelector } from 'hooks/redux';
-import { menuSlice } from 'store/reducers/MenuSlice';
 import { useDispatch } from 'react-redux';
-import Title from 'components/Title';
-import IconButton from 'components/UI/IconButton';
-import Icons from 'components/Icons';
-import Navigation from 'components/Navigation';
+import cl from './Menu.module.css';
 
 const Menu: React.FC = () => {
   const { isOpen } = useAppSelector((state) => state.menuReducer);

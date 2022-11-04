@@ -1,12 +1,12 @@
+import Icons from '@Components/Icons';
+import Title from '@Components/Title';
+import Button from '@Components/UI/Button';
+import DateTime from '@Components/UI/DateTime';
+import IconButton from '@Components/UI/IconButton';
+import Label from '@Components/UI/Label';
+import { IDeck } from '@Models/IDeck';
 import React from 'react';
-import { IDeck } from 'models/IDeck';
-import Title from 'components/Title';
-import IconButton from 'components/UI/IconButton';
-import Icons from 'components/Icons';
-import Button from 'components/UI/Button';
 import cl from './Deck.module.css';
-import Label from 'components/UI/Label';
-import DateTime from 'components/UI/DateTime';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groups }) => {
   const isDisabledButton = totalCards === 0 ? true : false;

@@ -1,11 +1,11 @@
-import Deck from 'components/Deck';
-import Icons from 'components/Icons';
-import Card from 'components/UI/Card';
-import Input from 'components/UI/Input';
+import Deck from '@Components/Deck';
+import Icons from '@Components/Icons';
+import Card from '@Components/UI/Card';
+import Input from '@Components/UI/Input';
+import { deckAPI } from '@Services/DeckService';
+import { headerSlice } from '@Store/reducers/HeaderSlice';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { deckAPI } from 'services/DeckService';
-import { headerSlice } from 'store/reducers/HeaderSlice';
 import cl from './AllDecks.module.css';
 
 const AllDecks: React.FC = () => {
