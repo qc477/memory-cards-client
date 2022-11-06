@@ -1,3 +1,4 @@
+import PageLoader from '@Components/UI/PageLoader';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path='/decks'
         element={
-          <React.Suspense fallback={<p>Загрузка страницы</p>}>
+          <React.Suspense fallback={<PageLoader />}>
             <AllDecks />
           </React.Suspense>
         }
@@ -19,7 +20,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path='about'
         element={
-          <React.Suspense fallback={<p>Загрузка страницы</p>}>
+          <React.Suspense fallback={<PageLoader />}>
             <About />
           </React.Suspense>
         }
@@ -27,7 +28,7 @@ const AppRoutes: React.FC = () => {
       <Route
         path='settings'
         element={
-          <React.Suspense fallback={<p>Загрузка страницы</p>}>
+          <React.Suspense fallback={<PageLoader />}>
             <Settings />
           </React.Suspense>
         }
