@@ -5,7 +5,7 @@ interface HeaderState {
 }
 
 const initialState: HeaderState = {
-  titleText: 'OpenMemoryCards',
+  titleText: '',
 };
 
 export const headerSlice = createSlice({
