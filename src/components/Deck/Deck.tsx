@@ -26,7 +26,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
       <div className={cl.deckFooter}>
         <div className={cl.deckInfoBlock}>
           {groups.map((group) => (
-            <Label key={group.id} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='success' />
+            <Label key={group.groupId} text={`${group.name.toUpperCase()}: ${group.totalCards}`} color='success' />
           ))}
         </div>
         <div className={cl.deckWrapper}>

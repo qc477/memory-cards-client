@@ -1,5 +1,5 @@
 export interface IGroup {
-  id: number;
+  groupId: number;
   name: string;
   totalCards: number;
 }
