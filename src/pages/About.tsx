@@ -1,13 +1,16 @@
+import { headerSlice } from '@Store/reducers/HeaderSlice';
+import { menuSlice } from '@Store/reducers/MenuSlice';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { headerSlice } from '../store/reducers/HeaderSlice';
 
 const About: React.FC = () => {
   const { changeTitleText } = headerSlice.actions;
+  const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(changeTitleText('О приложении'));
+    dispatch(setIsOpen(false));
   }, []);
 
   return (

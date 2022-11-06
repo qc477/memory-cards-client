@@ -1,15 +1,21 @@
+import Icons from '@Components/Icons';
 import React, { useState } from 'react';
+import IconButton from '../IconButton';
 import cl from './Input.module.css';
 
 interface InputProps {
   startIcon?: React.ReactNode;
   placeholder?: string;
-  isClearButton?: boolean;
+  clearButton?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ startIcon, placeholder, isClearButton = false }) => {
+const Input: React.FC<InputProps> = ({ startIcon, placeholder, clearButton = false }) => {
   const [isFocuse, setIsFocuse] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
+
+  function clearValue() {
+    setValue('');
+  }
 
   return (
     <div className={`${cl.wrapper} ${isFocuse ? cl.focuse : ''}`}>
@@ -17,12 +23,17 @@ const Input: React.FC<InputProps> = ({ startIcon, placeholder, isClearButton = f
       <input
         className={cl.input}
         type='text'
+        value={value}
         placeholder={placeholder}
         onChange={(event) => setValue(event.target.value)}
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />
-      {isClearButton ? 'x' : null}
+      {clearButton ? (
+        <IconButton color='faintStrongDown' _onClick={clearValue}>
+          <Icons name='clear' />
+        </IconButton>
+      ) : null}
     </div>
   );
 };
