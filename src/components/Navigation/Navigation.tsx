@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
             to={NavigationPath.DECKS}
             className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
           >
-            <Icons className={cl.navIcon} name='round' />
+            <Icons className={cl.navIcon} name='hline' />
             Колоды
           </NavLink>
         </li>

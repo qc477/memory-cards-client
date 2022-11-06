@@ -26,7 +26,8 @@
 }
 
 .navIcon {
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
   margin-right: 0.5rem;
   fill: var(--faint-strong);
 }
