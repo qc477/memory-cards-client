@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import cl from './AllDecks.module.css';
 
 const AllDecks: React.FC = () => {
-  const { data: decks } = deckAPI.useFetchAllDecksQuery('');
+  const { data: decks, isLoading } = deckAPI.useFetchAllDecksQuery('');
   const { changeTitleText } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const AllDecks: React.FC = () => {
     <main className={cl.main}>
       <Input startIcon={<Icons name='search' />} placeholder='Поиск' clearButton />
       <div className={cl.wrapper}>
+        {isLoading && <p>Loading...</p>}
         {decks &&
           decks.map((deck) => (
             <Card key={deck.id}>
