@@ -19,12 +19,12 @@
     "noEmitOnError": true,
     "jsx": "react-jsx",
     "paths": {
-      "@Models/*": ["src/models/*"],
-      "@Components/*": ["src/components/*"],
-      "@UI/*": ["src/components/UI/*"],
-      "@Services/*": ["src/services/*"],
-      "@Store/*": ["src/store/*"],
-      "@Hooks/*": ["src/hooks/*"]
+      "@/models/*": ["src/models/*"],
+      "@/components/*": ["src/components/*"],
+      "@/UI/*": ["src/components/UI/*"],
+      "@/services/*": ["src/services/*"],
+      "@/store/*": ["src/store/*"],
+      "@/hooks/*": ["src/hooks/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "src/declaration.d.ts"]

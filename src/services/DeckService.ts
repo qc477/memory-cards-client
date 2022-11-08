@@ -1,4 +1,4 @@
-import { IDeck } from '@Models/IDeck';
+import { IDeck } from '@/models/IDeck';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const deckAPI = createApi({

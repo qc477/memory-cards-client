@@ -1,6 +1,6 @@
-import PageLoader from '@Components/UI/PageLoader';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import PageLoader from '../UI/PageLoader';
 
 const AllDecks = React.lazy(() => import('../../pages/AllDecks'));
 const About = React.lazy(() => import('../../pages/About'));

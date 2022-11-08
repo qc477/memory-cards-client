@@ -1,5 +1,5 @@
-import { headerSlice } from '@Store/reducers/HeaderSlice';
-import { menuSlice } from '@Store/reducers/MenuSlice';
+import { headerSlice } from '@/store/reducers/HeaderSlice';
+import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 

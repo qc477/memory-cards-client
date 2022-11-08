@@ -1,4 +1,4 @@
-import Icons from '@Components/Icons';
+import Icons from '@/components/Icons';
 import React, { useState } from 'react';
 import IconButton from '../IconButton';
 import cl from './Input.module.css';

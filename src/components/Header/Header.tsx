@@ -1,10 +1,10 @@
-import Icons from '@Components/Icons';
-import Title from '@Components/Title';
-import IconButton from '@Components/UI/IconButton';
-import { useAppSelector } from '@Hooks/redux';
-import { menuSlice } from '@Store/reducers/MenuSlice';
+import { useAppSelector } from '@/hooks/redux';
+import { menuSlice } from '@/store/reducers/MenuSlice';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import Icons from '../Icons';
+import Title from '../Title';
+import IconButton from '../UI/IconButton';
 import cl from './Header.module.css';
 
 const Header: React.FC = () => {

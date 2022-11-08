@@ -1,4 +1,4 @@
-import { IDeck } from '@Models/IDeck';
+import { IDeck } from '@/models/IDeck';
 import { useMemo } from 'react';
 
 export const useDecks = (decks: IDeck[] | undefined, query: string): IDeck[] | undefined => {
