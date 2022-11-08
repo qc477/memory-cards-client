@@ -5,16 +5,31 @@ import cl from './Input.module.css';
 
 interface InputProps {
   startIcon?: React.ReactNode;
+  value?: string;
+  type?: string;
   placeholder?: string;
   clearButton?: boolean;
+  setStateParent?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ startIcon, placeholder, clearButton = false }) => {
+const Input: React.FC<InputProps> = ({
+  startIcon,
+  placeholder,
+  setStateParent,
+  type = 'text',
+  clearButton = false,
+}) => {
   const [isFocuse, setIsFocuse] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
 
+  function setStates(targetValue: string) {
+    setValue(targetValue);
+    setStateParent && setStateParent(targetValue);
+  }
+
   function clearValue() {
     setValue('');
+    setStateParent && setStateParent('');
   }
 
   return (
@@ -22,10 +37,10 @@ const Input: React.FC<InputProps> = ({ startIcon, placeholder, clearButton = fal
       {startIcon}
       <input
         className={cl.input}
-        type='text'
+        type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => setStates(event.target.value)}
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />
