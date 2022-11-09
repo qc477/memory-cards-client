@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import PageLoader from '../UI/PageLoader';
 
 const AllDecks = React.lazy(() => import('../../pages/AllDecks'));
+const AddDeck = React.lazy(() => import('../../pages/AddDeck'));
 const About = React.lazy(() => import('../../pages/About'));
 const Settings = React.lazy(() => import('../../pages/Settings'));
 
@@ -10,10 +11,18 @@ const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route
-        path='/decks'
+        path='decks'
         element={
           <React.Suspense fallback={<PageLoader />}>
             <AllDecks />
+          </React.Suspense>
+        }
+      />
+      <Route
+        path='add'
+        element={
+          <React.Suspense fallback={<PageLoader />}>
+            <AddDeck />
           </React.Suspense>
         }
       />

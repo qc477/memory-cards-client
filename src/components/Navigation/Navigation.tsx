@@ -5,6 +5,7 @@ import cl from './Navigation.module.css';
 
 enum NavigationPath {
   DECKS = 'decks',
+  ADD = 'add',
   SETTINGS = 'settings',
   ABOUT = 'about',
   DONATION = 'donation',
@@ -22,6 +23,15 @@ const Navigation: React.FC = () => {
           >
             <Icons className={cl.navIcon} name='hline' />
             Колоды
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={NavigationPath.ADD}
+            className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
+          >
+            <Icons className={cl.navIcon} name='hline' />
+            Создать колоду
           </NavLink>
         </li>
         <li>

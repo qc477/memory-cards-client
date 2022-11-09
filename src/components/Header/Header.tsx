@@ -2,6 +2,7 @@ import { useAppSelector } from '@/hooks/redux';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Icons from '../Icons';
 import Title from '../Title';
 import IconButton from '../UI/IconButton';
@@ -12,9 +13,14 @@ const Header: React.FC = () => {
   const { isScrollY } = useAppSelector((state) => state.appReducer);
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function openMenu(): void {
     dispatch(setIsOpen(true));
+  }
+
+  function moveToPage() {
+    navigate('add');
   }
 
   return (
@@ -24,7 +30,7 @@ const Header: React.FC = () => {
           <Icons name='menu' />
         </IconButton>
         <Title text={titleText} />
-        <IconButton color='faintStrong'>
+        <IconButton color='faintStrong' _onClick={moveToPage}>
           <Icons name='add' />
         </IconButton>
       </div>
