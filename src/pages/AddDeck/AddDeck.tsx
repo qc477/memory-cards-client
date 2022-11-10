@@ -1,3 +1,4 @@
+import Button from '@/components/UI/Button';
 import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect } from 'react';
@@ -14,7 +15,13 @@ const AddDeck: React.FC = () => {
     dispatch(setIsOpen(false));
   }, []);
 
-  return <main className={cl.main}>New Deck</main>;
+  return (
+    <main className={cl.main}>
+      <div className={cl.btnBox}>
+        <Button>Создать</Button>
+      </div>
+    </main>
+  );
 };
 
 export default AddDeck;

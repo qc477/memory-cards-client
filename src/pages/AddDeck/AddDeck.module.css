@@ -2,3 +2,16 @@
   height: 100vh;
   padding: 4.75rem 1rem 1rem;
 }
+
+.btnBox {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  z-index: 5;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+}
+
+.btnBox button {
+  width: 100%;
+}
