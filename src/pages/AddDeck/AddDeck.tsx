@@ -18,7 +18,7 @@ const AddDeck: React.FC = () => {
   return (
     <main className={cl.main}>
       <div className={cl.btnBox}>
-        <Button>Создать</Button>
+        <Button size='big'>Создать</Button>
       </div>
     </main>
   );

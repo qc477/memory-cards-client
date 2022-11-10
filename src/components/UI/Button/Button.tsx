@@ -1,16 +1,28 @@
 import React from 'react';
+import { clsx } from 'clsx';
 import cl from './Button.module.css';
+
+type Size = 'small' | 'medium' | 'big';
 
 interface ButtonProps {
   startIcon?: React.ReactNode;
   children?: string;
   disabled?: boolean;
+  size?: Size;
 }
 
-const Button: React.FC<ButtonProps> = ({ startIcon, children, disabled = false }) => {
+const Button: React.FC<ButtonProps> = ({ startIcon, children, size = 'medium', disabled = false }) => {
+  const styles = clsx(cl.button, {
+    [cl.small]: size === 'small',
+    [cl.medium]: size === 'medium',
+    [cl.big]: size === 'big',
+    [cl.disabled]: disabled,
+    [cl.active]: !disabled,
+  });
+
   return (
     <button
-      className={disabled ? `${cl.button} ${cl.disabled}` : `${cl.button} ${cl.active}`}
+      className={styles}
       type='button'
       disabled={disabled}
     >

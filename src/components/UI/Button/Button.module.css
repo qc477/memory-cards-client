@@ -5,7 +5,6 @@
   align-items: center;
   padding: 0.5em 1em;
   margin: 0;
-  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
@@ -21,7 +20,7 @@
 .button.active {
   color: var(--base-weak);
   background-color: var(--accent-strong);
-  box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 0.07em 0 rgb(0 0 0 / 20%);
 }
 
 .button.active svg {
@@ -40,4 +39,13 @@
 
 .button.disabled svg {
   fill: var(--faint-weak-text);
+}
+
+/* Sizes */
+.medium {
+  font-size: 0.875rem;
+}
+
+.big {
+  font-size: 1.5rem;
 }
