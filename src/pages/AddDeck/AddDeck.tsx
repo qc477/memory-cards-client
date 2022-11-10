@@ -1,4 +1,5 @@
 import Button from '@/components/UI/Button';
+import Input from '@/components/UI/Input';
 import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect } from 'react';
@@ -17,6 +18,9 @@ const AddDeck: React.FC = () => {
 
   return (
     <main className={cl.main}>
+      <div className={cl.wrapper}>
+        <Input placeholder='Название' clearButton />
+      </div>
       <div className={cl.btnBox}>
         <Button size='big'>Создать</Button>
       </div>
