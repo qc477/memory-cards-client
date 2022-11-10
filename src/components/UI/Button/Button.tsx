@@ -1,5 +1,5 @@
 import React from 'react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 import cl from './Button.module.css';
 
 type Size = 'small' | 'medium' | 'big';
@@ -21,11 +21,7 @@ const Button: React.FC<ButtonProps> = ({ startIcon, children, size = 'medium', d
   });
 
   return (
-    <button
-      className={styles}
-      type='button'
-      disabled={disabled}
-    >
+    <button className={styles} type='button' disabled={disabled}>
       {startIcon}
       {children}
     </button>
