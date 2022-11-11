@@ -4,8 +4,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Icons from '../Icons';
 import Navigation from '../Navigation';
-import Title from '../Title';
 import IconButton from '../UI/IconButton';
+import Title from '../UI/Title';
 import cl from './Menu.module.css';
 
 const Menu: React.FC = () => {

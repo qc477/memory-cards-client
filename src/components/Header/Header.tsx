@@ -4,8 +4,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Icons from '../Icons';
-import Title from '../Title';
 import IconButton from '../UI/IconButton';
+import Title from '../UI/Title';
 import cl from './Header.module.css';
 
 const Header: React.FC = () => {

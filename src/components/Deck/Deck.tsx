@@ -1,11 +1,11 @@
 import { IDeck } from '@/models/IDeck';
 import React from 'react';
 import Icons from '../Icons';
-import Title from '../Title';
 import Button from '../UI/Button';
 import DateTime from '../UI/DateTime';
 import IconButton from '../UI/IconButton';
 import Label from '../UI/Label';
+import Title from '../UI/Title';
 import cl from './Deck.module.css';
 
 const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLastExercise, groups }) => {
