@@ -14,7 +14,9 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
   return (
     <div className={cl.deck}>
       <div className={cl.deckHeader}>
-        <Title type='h2' text={title} />
+        <Title className={cl.deckTitle} size='h2'>
+          {title}
+        </Title>
         <IconButton color='faintStrongTextDown'>
           <Icons name='more' />
         </IconButton>

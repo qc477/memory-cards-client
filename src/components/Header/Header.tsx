@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         <IconButton color='faintStrong' _onClick={openMenu}>
           <Icons name='menu' />
         </IconButton>
-        <Title text={titleText} />
+        <Title className={cl.title}>{titleText}</Title>
         <IconButton color='faintStrong' _onClick={moveToPage}>
           <Icons name='add' />
         </IconButton>

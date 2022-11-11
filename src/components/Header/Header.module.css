@@ -17,6 +17,10 @@
   margin: 0 1rem;
 }
 
+.title {
+  color: var(--faint-strong);
+}
+
 .scroll {
   background-color: rgb(255 255 255 / 80%);
   backdrop-filter: blur(8px);

@@ -1,28 +1,23 @@
+import clsx from 'clsx';
 import React from 'react';
 import cl from './Title.module.css';
 
-enum TitleType {
-  H1 = 'h1',
-  H2 = 'h2',
-  H3 = 'h3',
-}
+type Size = 'h1' | 'h2' | 'h3';
 
 interface TitleProps {
-  type?: string;
-  text: string;
+  children: string;
+  className?: string;
+  size?: Size;
 }
 
-const Title: React.FC<TitleProps> = ({ type, text }) => {
-  switch (type) {
-    case TitleType.H1:
-      return <h1 className={`${cl.title} ${cl.titleH1}`}>{text}</h1>;
-    case TitleType.H2:
-      return <h2 className={`${cl.title} ${cl.titleH2}`}>{text}</h2>;
-    case TitleType.H3:
-      return <h3 className={`${cl.title} ${cl.titleH3}`}>{text}</h3>;
-    default:
-      return <h1 className={`${cl.title} ${cl.titleH1}`}>{text}</h1>;
-  }
+const Title: React.FC<TitleProps> = ({ children, className = '', size = 'h1' }) => {
+  const styles = clsx([cl.title, className], {
+    [cl.sizeH1]: size === 'h1',
+    [cl.sizeH2]: size === 'h2',
+    [cl.sizeH3]: size === 'h3',
+  });
+
+  return <h1 className={styles}>{children}</h1>;
 };
 
 export default Title;

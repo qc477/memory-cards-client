@@ -23,6 +23,10 @@
   padding-left: 1rem;
 }
 
+.menuTitle {
+  color: var(--faint-strong);
+}
+
 .menuContent {
   position: relative;
   top: 0;
