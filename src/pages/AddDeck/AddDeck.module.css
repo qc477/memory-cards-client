@@ -3,6 +3,52 @@
   padding: 4.75rem 1rem 1rem;
 }
 
+.innerBlock {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: -0.6rem;
+}
+
+.lineStart,
+.lineMiddle,
+.lineEnd {
+  height: 2px;
+  background-color: var(--faint-weak-text);
+}
+
+.lineStart,
+.lineEnd {
+  width: 1rem;
+}
+
+.lineStart {
+  margin-right: 0.25rem;
+}
+
+.lineMiddle {
+  width: 100%;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.lineEnd {
+  margin-left: 0.25rem;
+}
+
+.title,
+.counter {
+  color: var(--faint-weak-text);
+}
+
+.counter {
+  font-weight: 500;
+}
+
 .btnBox {
   position: fixed;
   bottom: 1rem;
