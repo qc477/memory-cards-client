@@ -14,29 +14,27 @@
   margin-bottom: -0.6rem;
 }
 
-.lineStart,
-.lineMiddle,
-.lineEnd {
+.line {
   height: 2px;
   background-color: var(--faint-weak-text);
 }
 
-.lineStart,
-.lineEnd {
+.line:first-child,
+.line:last-child {
   width: 1rem;
 }
 
-.lineStart {
+.line:first-child {
   margin-right: 0.25rem;
 }
 
-.lineMiddle {
+.line:nth-of-type(2) {
   width: 100%;
   margin-right: 0.25rem;
   margin-left: 0.25rem;
 }
 
-.lineEnd {
+.line:last-child {
   margin-left: 0.25rem;
 }
 

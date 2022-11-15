@@ -24,13 +24,13 @@ const AddDeck: React.FC = () => {
         <div className={cl.innerBlock}>
           <Input placeholder='Название' clearButton />
           <div className={cl.titleBlock}>
-            <span className={cl.lineStart}></span>
+            <span className={cl.line}></span>
             <Title className={cl.title} size='h2'>
               Карточки
             </Title>
-            <span className={cl.lineMiddle}></span>
+            <span className={cl.line}></span>
             <span className={cl.counter}>0</span>
-            <span className={cl.lineEnd}></span>
+            <span className={cl.line}></span>
           </div>
           <Input placeholder='Вопрос' clearButton />
           <Input placeholder='Ответ' clearButton />
