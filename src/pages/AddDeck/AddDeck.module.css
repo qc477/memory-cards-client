@@ -52,6 +52,14 @@
   padding: 0 1rem;
 }
 
+.cardsBlock {
+  display: grid;
+  row-gap: 1rem;
+  height: 100%;
+  padding: 2rem 1rem 0;
+  overflow: auto;
+}
+
 .btnBox {
   position: fixed;
   bottom: 1rem;
