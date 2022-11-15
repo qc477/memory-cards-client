@@ -49,6 +49,11 @@
   font-weight: 500;
 }
 
+.addBtnBox {
+  justify-self: end;
+  padding: 0 1rem;
+}
+
 .btnBox {
   position: fixed;
   bottom: 1rem;

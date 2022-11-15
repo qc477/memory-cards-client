@@ -1,5 +1,6 @@
 import Button from '@/components/UI/Button';
 import Input from '@/components/UI/Input';
+import TextButton from '@/components/UI/TextButton';
 import Title from '@/components/UI/Title';
 import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
@@ -33,6 +34,9 @@ const AddDeck: React.FC = () => {
           </div>
           <Input placeholder='Вопрос' clearButton />
           <Input placeholder='Ответ' clearButton />
+          <div className={cl.addBtnBox}>
+            <TextButton>Добавить</TextButton>
+          </div>
         </div>
       </div>
       <div className={cl.btnBox}>
