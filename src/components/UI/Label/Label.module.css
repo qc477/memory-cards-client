@@ -1,22 +1,23 @@
 .label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.285em 0.571em;
   font-size: 0.875rem;
   font-weight: 500;
   border-radius: 8em;
 }
 
-.colorCritical {
+.default {
+  color: var(--accent-strong);
+  background-color: var(--accent-weak);
+}
+
+.critical {
   color: var(--base-weak);
   background-color: var(--critic-strong);
 }
 
-.colorGray {
-  color: var(--faint-weak);
-  background-color: var(--faint-strong);
-}
-
-.colorSuccess {
+.success {
   color: var(--success-strong);
   background-color: var(--success-weak);
 }

@@ -1,34 +1,25 @@
+import clsx from 'clsx';
 import React from 'react';
 import cl from './Label.module.css';
 
+type Color = 'default' | 'critical' | 'success' | 'warning';
+
 interface LabelProps {
   text: string;
-  color?: string;
+  color?: Color;
 }
 
-enum Colors {
-  CRITICAL = 'critical',
-  SUCCESS = 'success',
-  GRAY = 'gray',
-}
-
-const Label: React.FC<LabelProps> = ({ text, color }) => {
-  function getColorClassName() {
-    switch (color) {
-      case Colors.CRITICAL:
-        return cl.colorCritical;
-      case Colors.SUCCESS:
-        return cl.colorSuccess;
-      case Colors.GRAY:
-        return cl.colorGray;
-      default:
-        return '';
-    }
-  }
+const Label: React.FC<LabelProps> = ({ text, color = 'default' }) => {
+  const styles = clsx(cl.label, {
+    [cl.default]: color === 'default',
+    [cl.critical]: color === 'critical',
+    [cl.warning]: color === 'warning',
+    [cl.success]: color === 'success',
+  });
 
   return (
     <div>
-      <span className={`${cl.label} ${getColorClassName()}`}>{text}</span>
+      <span className={styles}>{text}</span>
     </div>
   );
 };
