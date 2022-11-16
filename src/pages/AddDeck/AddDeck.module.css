@@ -1,12 +1,13 @@
 .main {
+  display: grid;
   height: 100vh;
   padding: 4.75rem 1rem 1rem;
 }
 
-.innerBlock {
+/* .inputBlock {
   display: grid;
   row-gap: 2rem;
-}
+} */
 
 .titleBlock {
   display: flex;
@@ -58,6 +59,7 @@
   height: 100%;
   padding: 2rem 1rem 0;
   overflow: auto;
+  background-color: grey;
 }
 
 .btnBox {

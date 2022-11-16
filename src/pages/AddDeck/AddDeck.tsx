@@ -31,36 +31,32 @@ const AddDeck: React.FC = () => {
 
   return (
     <main className={cl.main}>
-      <div className={cl.wrapper}>
-        <div className={cl.innerBlock}>
-          <Input placeholder='Название' clearButton />
-          <div className={cl.titleBlock}>
-            <span className={cl.line}></span>
-            <Title className={cl.title} size='h2'>
-              Карточки
-            </Title>
-            <span className={cl.line}></span>
-            <span className={cl.counter}>0</span>
-            <span className={cl.line}></span>
-          </div>
-          <Input placeholder='Вопрос' clearButton />
-          <Input placeholder='Ответ' clearButton />
-          <div className={cl.addBtnBox}>
-            <TextButton onClick={() => addCard('question', 'answer')}>Добавить</TextButton>
-          </div>
+      <div className={cl.inputBlock}>
+        <Input placeholder='Название' clearButton />
+        <div className={cl.titleBlock}>
+          <span className={cl.line}></span>
+          <Title className={cl.title} size='h2'>
+            Карточки
+          </Title>
+          <span className={cl.line}></span>
+          <span className={cl.counter}>0</span>
+          <span className={cl.line}></span>
         </div>
-        <div className={cl.cardsBlock}>
-          {cards.map((card) => (
-            <Card>
-              <p>{card.question}</p>
-              <p>{card.answer}</p>
-            </Card>
-          ))}
+        <Input placeholder='Вопрос' clearButton />
+        <Input placeholder='Ответ' clearButton />
+        <div className={cl.addBtnBox}>
+          <TextButton onClick={() => addCard('question', 'answer')}>Добавить</TextButton>
         </div>
       </div>
-      <div className={cl.btnBox}>
-        <Button size='big'>Создать</Button>
+      <div className={cl.cardsBlock}>
+        {cards.map((card) => (
+          <Card>
+            <p>{card.question}</p>
+            <p>{card.answer}</p>
+          </Card>
+        ))}
       </div>
+      <Button size='big'>Создать</Button>
     </main>
   );
 };
