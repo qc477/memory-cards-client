@@ -7,10 +7,10 @@ type Color = 'faintStrong' | 'faintStrongDown' | 'faintStrongTextDown';
 interface IconButtonProps {
   children: React.ReactNode;
   color?: Color;
-  _onClick?: () => void;
+  onClick?: () => void;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({ children, color, _onClick }) => {
+const IconButton: React.FC<IconButtonProps> = ({ children, color, onClick }) => {
   const styles = clsx(cl.baseStyles, {
     [cl.faintStrong]: color === 'faintStrong',
     [cl.faintStrongDown]: color === 'faintStrongDown',
@@ -18,7 +18,7 @@ const IconButton: React.FC<IconButtonProps> = ({ children, color, _onClick }) =>
   });
 
   return (
-    <button className={styles} onClick={_onClick}>
+    <button className={styles} onClick={onClick}>
       {children}
     </button>
   );

@@ -26,11 +26,11 @@ const Header: React.FC = () => {
   return (
     <header className={isScrollY ? `${cl.header} ${cl.scroll}` : cl.header}>
       <div className={cl.body}>
-        <IconButton color='faintStrong' _onClick={openMenu}>
+        <IconButton color='faintStrong' onClick={openMenu}>
           <Icons name='menu' />
         </IconButton>
         <Title className={cl.title}>{titleText}</Title>
-        <IconButton color='faintStrong' _onClick={moveToPage}>
+        <IconButton color='faintStrong' onClick={moveToPage}>
           <Icons name='add' />
         </IconButton>
       </div>

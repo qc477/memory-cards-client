@@ -45,7 +45,7 @@ const Input: React.FC<InputProps> = ({
         onBlur={() => setIsFocuse(false)}
       />
       {clearButton ? (
-        <IconButton color='faintStrongDown' _onClick={clearValue}>
+        <IconButton color='faintStrongDown' onClick={clearValue}>
           <Icons name='clear' />
         </IconButton>
       ) : null}
