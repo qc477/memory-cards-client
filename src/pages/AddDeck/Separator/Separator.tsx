@@ -1,3 +1,4 @@
+import Label from '@/components/UI/Label';
 import Title from '@/components/UI/Title';
 import React from 'react';
 import cl from './Separator.module.css';
@@ -14,6 +15,7 @@ const Separator: React.FC<SeparatorProps> = ({ text }) => {
         {text}
       </Title>
       <span className={cl.line}></span>
+      <Label text='0' />
       <span className={cl.line}></span>
     </div>
   );

@@ -1,0 +1,36 @@
+.separator {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.line {
+  display: block;
+  height: 2px;
+  background-color: var(--faint-weak-text);
+  border-radius: 1px;
+  opacity: 0.3;
+}
+
+.line:first-child,
+.line:last-child {
+  width: 1rem;
+}
+
+.line:first-child {
+  margin-right: 0.5rem;
+}
+
+.line:nth-of-type(2) {
+  flex-grow: 1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.line:last-child {
+  margin-left: 0.5rem;
+}
+
+.title {
+  color: var(--faint-strong-text-down);
+}
