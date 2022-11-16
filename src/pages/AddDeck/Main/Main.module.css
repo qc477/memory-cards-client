@@ -1,4 +1,12 @@
 .main {
+  display: grid;
   height: 100vh;
-  padding: 3.75rem 1rem 0;
+  padding: 3.75rem 1rem 1rem;
+}
+
+@media (max-width: 786px) {
+  .main {
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr;
+  }
 }
