@@ -1,0 +1,12 @@
+.cardsPreview {
+  display: grid;
+  overflow-x: scroll;
+}
+
+@media (max-width: 786px) {
+  .cardsPreview {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+    padding: 1rem;
+  }
+}
