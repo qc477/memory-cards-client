@@ -5,6 +5,20 @@
   margin-top: 1rem;
 }
 
+.column {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
 .buttonBox {
   justify-self: end;
   padding: 0 1rem;

@@ -3,32 +3,35 @@ import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import CardsPreview from './CardsPreview';
-import CreateButton from './CreateButton';
 import Form from './Form';
 import Main from './Main';
 
 const AddDeck: React.FC = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([
+    { question: 'name', answer: 'имя' },
+    { question: 'car', answer: 'машина' },
+    { question: 'ant', answer: 'муравей' },
+    { question: 'home', answer: 'дом' },
+    { question: 'dog', answer: 'собака' },
+    { question: 'cat', answer: 'кот, кошка' },
+    { question: 'pencil', answer: 'карандаш' },
+    { question: 'phone', answer: 'телефон' },
+    { question: 'finger', answer: 'палец на руке' },
+    { question: 'smile', answer: 'улыбка' },
+  ]);
   const { changeTitleText } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
     dispatch(changeTitleText('Новая колода'));
     dispatch(setIsOpen(false));
-
-    return () => {
-      document.body.style.overflow = 'visible';
-    };
   }, []);
 
   return (
     <Main>
       <Form />
       <CardsPreview cards={cards} />
-      <CreateButton />
     </Main>
   );
 };
