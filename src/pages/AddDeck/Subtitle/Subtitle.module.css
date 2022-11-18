@@ -1,7 +1,7 @@
-.separator {
+.subtitle {
   display: flex;
-  margin-top: 1rem;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .line {
@@ -23,14 +23,14 @@
 
 .line:nth-of-type(2) {
   flex-grow: 1;
-  margin-left: 0.5rem;
   margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .line:last-child {
   margin-left: 0.5rem;
 }
 
-.title {
+.text {
   color: var(--faint-strong-text-down);
 }

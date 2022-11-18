@@ -2,8 +2,9 @@ import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import FormCreatingDeck from './FormCreatingDeck';
+import FormCreatingCard from './FormCreatingCard';
 import CardsPreview from './CardsPreview';
-import Form from './Form';
 import Main from './Main';
 
 const AddDeck: React.FC = () => {
@@ -30,7 +31,8 @@ const AddDeck: React.FC = () => {
 
   return (
     <Main>
-      <Form />
+      <FormCreatingDeck />
+      <FormCreatingCard cardsCounter={cards.length}/>
       <CardsPreview cards={cards} />
     </Main>
   );

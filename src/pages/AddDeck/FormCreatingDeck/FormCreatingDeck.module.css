@@ -1,0 +1,11 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttonBox {
+  justify-self: end;
+  padding: 0 1rem;
+}

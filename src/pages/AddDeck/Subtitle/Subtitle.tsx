@@ -1,24 +1,25 @@
 import Label from '@/components/UI/Label';
 import Title from '@/components/UI/Title';
 import React from 'react';
-import cl from './Separator.module.css';
+import cl from './Subtitle.module.css';
 
-interface SeparatorProps {
+interface SubtitleProps {
   text: string;
+  cardsCounter: number;
 }
 
-const Separator: React.FC<SeparatorProps> = ({ text }) => {
+const Subtitle: React.FC<SubtitleProps> = ({ text, cardsCounter }) => {
   return (
-    <div className={cl.separator}>
+    <div className={cl.subtitle}>
       <span className={cl.line}></span>
-      <Title className={cl.title} size='h2'>
+      <Title className={cl.text} size='h2'>
         {text}
       </Title>
       <span className={cl.line}></span>
-      <Label text='0' />
+      <Label text={cardsCounter.toString()} />
       <span className={cl.line}></span>
     </div>
   );
 };
 
-export default Separator;
+export default Subtitle;

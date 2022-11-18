@@ -1,6 +1,5 @@
 .cardsPreview {
   display: grid;
-  overflow-x: scroll;
 }
 
 @media (max-width: 786px) {
