@@ -8,17 +8,10 @@ interface InputProps {
   value?: string;
   type?: string;
   placeholder?: string;
-  clearButton?: boolean;
   setStateParent?: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({
-  startIcon,
-  placeholder,
-  setStateParent,
-  type = 'text',
-  clearButton = false,
-}) => {
+const Input: React.FC<InputProps> = ({ startIcon, placeholder, setStateParent, type = 'text' }) => {
   const [isFocuse, setIsFocuse] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
 
@@ -44,11 +37,9 @@ const Input: React.FC<InputProps> = ({
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />
-      {clearButton ? (
-        <IconButton color='faintStrongDown' onClick={clearValue}>
-          <Icons name='clear' />
-        </IconButton>
-      ) : null}
+      <IconButton color='faintStrongDown' onClick={clearValue}>
+        <Icons name='clear' />
+      </IconButton>
     </div>
   );
 };

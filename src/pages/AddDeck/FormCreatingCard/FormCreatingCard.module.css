@@ -2,6 +2,13 @@
 .form {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.formWrapper {
+  row-gap: 1.5rem;
+}
+
+.form {
   row-gap: 1rem;
 }
 
@@ -11,4 +18,5 @@
   justify-content: space-between;
   padding-right: 1rem;
   padding-left: 1rem;
+  margin-top: 0.5rem;
 }
