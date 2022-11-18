@@ -1,4 +1,5 @@
 import Card from '@/components/UI/Card';
+import Text from '@/components/UI/Text';
 import React from 'react';
 import cl from './CardsPreview.module.css';
 
@@ -16,8 +17,8 @@ const CardsPreview: React.FC<CardsPreviewProps> = ({ cards }) => {
     <div className={cl.cardsPreview}>
       {cards.map((card) => (
         <Card>
-          <p>{card.question}</p>
-          <p>{card.answer}</p>
+          <Text>{card.question}</Text>
+          <Text>{card.answer}</Text>
         </Card>
       ))}
     </div>
