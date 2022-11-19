@@ -14,7 +14,7 @@ const initialState: AddDeckState = {
   cards: [],
 };
 
-export const PageAddDeckSlice = createSlice({
+export const pageAddDeckSlice = createSlice({
   name: 'addDeck',
   initialState,
   reducers: {
@@ -25,9 +25,9 @@ export const PageAddDeckSlice = createSlice({
       state.cardsCounter = action.payload;
     },
     setCards(state, action: PayloadAction<Card>) {
-      state.cards = [...state.cards, action.payload];
+      state.cards = [action.payload, ...state.cards];
     },
   },
 });
 
-export default PageAddDeckSlice.reducer;
+export default pageAddDeckSlice.reducer;

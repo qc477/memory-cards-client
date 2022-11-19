@@ -8,22 +8,13 @@ interface InputProps {
   value?: string;
   type?: string;
   placeholder?: string;
-  setStateParent?: (value: string) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<InputProps> = ({ startIcon, placeholder, setStateParent, type = 'text' }) => {
+const Input: React.FC<InputProps> = ({ startIcon, value, placeholder, onChange, type = 'text' }) => {
   const [isFocuse, setIsFocuse] = useState<boolean>(false);
-  const [value, setValue] = useState<string>('');
 
-  function setStates(targetValue: string) {
-    setValue(targetValue);
-    setStateParent && setStateParent(targetValue);
-  }
-
-  function clearValue() {
-    setValue('');
-    setStateParent && setStateParent('');
-  }
+  function clearValue() {}
 
   return (
     <div className={`${cl.wrapper} ${isFocuse ? cl.focuse : ''}`}>
@@ -33,7 +24,7 @@ const Input: React.FC<InputProps> = ({ startIcon, placeholder, setStateParent, t
         type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(event) => setStates(event.target.value)}
+        onChange={onChange}
         onFocus={() => setIsFocuse(true)}
         onBlur={() => setIsFocuse(false)}
       />

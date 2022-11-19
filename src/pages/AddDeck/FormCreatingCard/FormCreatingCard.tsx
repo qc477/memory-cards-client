@@ -1,23 +1,34 @@
 import Input from '@/components/UI/Input';
 import TextButton from '@/components/UI/TextButton';
-import React from 'react';
+import { useAppSelector } from '@/hooks/redux';
+import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Subtitle from '../Subtitle';
 import cl from './FormCreatingCard.module.css';
 
-interface FormCreatingCardProps {
-  cardsCounter: number;
-}
+const FormCreatingCard: React.FC = () => {
+  const { cardsCounter } = useAppSelector((state) => state.pageAddDeckReducer);
+  const { setCards } = pageAddDeckSlice.actions;
+  const [questionValue, setQuestionValue] = useState<string>('');
+  const [answerValue, setAnswerValue] = useState<string>('');
+  const dispatch = useDispatch();
 
-const FormCreatingCard: React.FC<FormCreatingCardProps> = ({ cardsCounter }) => {
+  const add = () => {
+    dispatch(setCards({ question: questionValue, answer: answerValue }));
+    setQuestionValue('')
+    setAnswerValue('')
+  };
+
   return (
     <div className={cl.formWrapper}>
       <Subtitle text='Карточки' cardsCounter={cardsCounter} />
       <form className={cl.form} onSubmit={(e) => e.preventDefault()}>
-        <Input placeholder='Вопрос' />
-        <Input placeholder='Ответ' />
+        <Input value={questionValue} placeholder='Вопрос' onChange={(e) => setQuestionValue(e.target.value)} />
+        <Input value={answerValue} placeholder='Ответ' onChange={(e) => setAnswerValue(e.target.value)} />
         <div className={cl.buttonsWrapper}>
           <TextButton>Импортировать из файла</TextButton>
-          <TextButton>Добавить</TextButton>
+          <TextButton onClick={add}>Добавить</TextButton>
         </div>
       </form>
     </div>

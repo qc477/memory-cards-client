@@ -1,18 +1,18 @@
 import Card from '@/components/UI/Card';
 import Text from '@/components/UI/Text';
-import React from 'react';
+import { useAppSelector } from '@/hooks/redux';
+import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
+import React, { useMemo } from 'react';
+import { useDispatch } from 'react-redux';
 import cl from './CardsPreview.module.css';
 
-type Card = {
-  question: string;
-  answer: string;
-};
+const CardsPreview: React.FC = () => {
+  const { cards } = useAppSelector((state) => state.pageAddDeckReducer);
+  const { setCardsCounter } = pageAddDeckSlice.actions;
+  const dispatch = useDispatch();
 
-interface CardsPreviewProps {
-  cards: Card[];
-}
+  useMemo(() => dispatch(setCardsCounter(cards.length)), [cards]);
 
-const CardsPreview: React.FC<CardsPreviewProps> = ({ cards }) => {
   return (
     <div className={cl.cardsPreview}>
       {cards.map((card) => (

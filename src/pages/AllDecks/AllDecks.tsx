@@ -30,7 +30,12 @@ const AllDecks: React.FC = () => {
 
   return (
     <main className={cl.main}>
-      <Input startIcon={<Icons name='search' />} setStateParent={setQuery} placeholder='Поиск' />
+      <Input
+        startIcon={<Icons name='search' />}
+        value={query}
+        placeholder='Поиск'
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <div className={cl.wrapper}>
         {isLoading && <p>Loading...</p>}
         {searchDecks &&
