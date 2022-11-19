@@ -17,8 +17,11 @@ const CardsPreview: React.FC<CardsPreviewProps> = ({ cards }) => {
     <div className={cl.cardsPreview}>
       {cards.map((card) => (
         <Card>
-          <Text>{card.question}</Text>
-          <Text>{card.answer}</Text>
+          <div className={cl.wrapper}>
+            <Text>{card.question}</Text>
+            <span className={cl.separator}></span>
+            <Text>{card.answer}</Text>
+          </div>
         </Card>
       ))}
     </div>

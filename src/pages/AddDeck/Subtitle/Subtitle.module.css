@@ -7,9 +7,8 @@
 .line {
   display: block;
   height: 2px;
-  background-color: var(--faint-weak-text);
+  background-color: var(--faint-weak-up);
   border-radius: 1px;
-  opacity: 0.3;
 }
 
 .line:first-child,

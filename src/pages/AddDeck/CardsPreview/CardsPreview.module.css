@@ -2,10 +2,26 @@
   display: grid;
 }
 
+.wrapper {
+  padding: 1rem;
+  color: var(--faint-strong-text);
+  text-align: center;
+}
+
+.separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--faint-weak-up);
+}
+
 @media (max-width: 786px) {
   .cardsPreview {
     grid-template-columns: 1fr;
     row-gap: 1.5rem;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
