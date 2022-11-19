@@ -12,7 +12,7 @@ import cl from './AllDecks.module.css';
 
 const AllDecks: React.FC = () => {
   const { data: decks, isLoading } = deckAPI.useFetchAllDecksQuery('');
-  const { changeTitleText } = headerSlice.actions;
+  const { changeTitleText, visibleAddButton } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
   const [query, setQuery] = useState<string>('');
@@ -20,7 +20,12 @@ const AllDecks: React.FC = () => {
 
   useEffect(() => {
     dispatch(changeTitleText('Все колоды'));
+    dispatch(visibleAddButton(true));
     dispatch(setIsOpen(false));
+
+    return () => {
+      dispatch(visibleAddButton(false));
+    };
   }, []);
 
   return (

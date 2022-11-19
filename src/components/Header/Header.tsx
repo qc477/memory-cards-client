@@ -9,7 +9,7 @@ import Title from '../UI/Title';
 import cl from './Header.module.css';
 
 const Header: React.FC = () => {
-  const { titleText } = useAppSelector((state) => state.headerReducer);
+  const { titleText, isVisibleAddButton } = useAppSelector((state) => state.headerReducer);
   const { isScrollY } = useAppSelector((state) => state.appReducer);
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
@@ -30,9 +30,11 @@ const Header: React.FC = () => {
           <Icons name='menu' />
         </IconButton>
         <Title className={cl.title}>{titleText}</Title>
-        <IconButton color='faintStrong' onClick={moveToPage}>
-          <Icons name='add' />
-        </IconButton>
+        {isVisibleAddButton ? (
+          <IconButton color='faintStrong' onClick={moveToPage}>
+            <Icons name='add' />
+          </IconButton>
+        ) : null}
       </div>
     </header>
   );
