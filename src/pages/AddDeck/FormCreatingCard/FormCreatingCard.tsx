@@ -1,5 +1,5 @@
-import Input from '@/components/UI/Input';
 import TextButton from '@/components/UI/TextButton';
+import TextField from '@/components/UI/TextField';
 import { useAppSelector } from '@/hooks/redux';
 import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
 import React, { useState } from 'react';
@@ -16,16 +16,26 @@ const FormCreatingCard: React.FC = () => {
 
   const add = () => {
     dispatch(setCards({ question: questionValue, answer: answerValue }));
-    setQuestionValue('')
-    setAnswerValue('')
+    setQuestionValue('');
+    setAnswerValue('');
   };
 
   return (
     <div className={cl.formWrapper}>
       <Subtitle text='Карточки' cardsCounter={cardsCounter} />
       <form className={cl.form} onSubmit={(e) => e.preventDefault()}>
-        <Input value={questionValue} placeholder='Вопрос' onChange={(e) => setQuestionValue(e.target.value)} />
-        <Input value={answerValue} placeholder='Ответ' onChange={(e) => setAnswerValue(e.target.value)} />
+        <TextField
+          value={questionValue}
+          placeholder='Вопрос'
+          onChange={(e) => setQuestionValue(e.target.value)}
+          onClear={() => setQuestionValue('')}
+        />
+        <TextField
+          value={answerValue}
+          placeholder='Ответ'
+          onChange={(e) => setAnswerValue(e.target.value)}
+          onClear={() => setAnswerValue('')}
+        />
         <div className={cl.buttonsWrapper}>
           <TextButton>Импортировать из файла</TextButton>
           <TextButton onClick={add}>Добавить</TextButton>

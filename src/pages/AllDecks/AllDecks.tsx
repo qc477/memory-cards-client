@@ -1,7 +1,7 @@
 import Deck from '@/components/Deck';
 import Icons from '@/components/Icons';
 import Card from '@/components/UI/Card';
-import Input from '@/components/UI/Input';
+import TextField from '@/components/UI/TextField';
 import { useDecks } from '@/hooks/useDecks';
 import { deckAPI } from '@/services/DeckService';
 import { headerSlice } from '@/store/reducers/HeaderSlice';
@@ -30,11 +30,13 @@ const AllDecks: React.FC = () => {
 
   return (
     <main className={cl.main}>
-      <Input
+      <TextField
         startIcon={<Icons name='search' />}
         value={query}
         placeholder='Поиск'
+        type='search'
         onChange={(e) => setQuery(e.target.value)}
+        onClear={() => setQuery('')}
       />
       <div className={cl.wrapper}>
         {isLoading && <p>Loading...</p>}
