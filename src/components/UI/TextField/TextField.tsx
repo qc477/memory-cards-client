@@ -2,7 +2,7 @@ import Icons from '@/components/Icons';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 import IconButton from '../IconButton';
-import InputBase from '../InputBase';
+import InputBase from '../../__base__/InputBase';
 import cl from './TextField.module.css';
 
 interface TextFieldProps {

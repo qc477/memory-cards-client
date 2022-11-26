@@ -1,4 +1,5 @@
-.menu {
+/* Wrapper */
+.wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,25 +10,13 @@
   background-color: rgb(0 0 0 / 70%);
 }
 
-.menu.open {
+.wrapper.open {
   pointer-events: all;
   visibility: visible;
 }
 
-.menuHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.menuTitle {
-  color: var(--faint-strong);
-}
-
-.menuContent {
+/* Body */
+.body {
   position: relative;
   top: 0;
   left: -70%;
@@ -39,7 +28,22 @@
   transition: 0.5s;
 }
 
-.menuContent.open {
+.body.open {
   left: 0;
   visibility: visible;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Title */
+.title {
+  color: var(--faint-strong);
 }
