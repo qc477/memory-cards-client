@@ -7,18 +7,19 @@ import Navigation from '../Navigation';
 import IconButton from '../UI/IconButton';
 import Title from '../UI/Title';
 import cl from './Menu.module.css';
+import Wrapper from './Wrapper';
 
 const Menu: React.FC = () => {
   const { isOpen } = useAppSelector((state) => state.menuReducer);
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
 
-  function close(): void {
+  const close = (): void => {
     dispatch(setIsOpen(false));
-  }
+  };
 
   return (
-    <div className={isOpen ? `${cl.menu} ${cl.open}` : cl.menu} onClick={close}>
+    <Wrapper isOpen={isOpen} onClick={close}>
       <div className={isOpen ? `${cl.menuContent} ${cl.open}` : cl.menuContent} onClick={(e) => e.stopPropagation()}>
         <div className={cl.menuHeader}>
           <Title className={cl.menuTitle}>MemoryCards</Title>
@@ -28,7 +29,7 @@ const Menu: React.FC = () => {
         </div>
         <Navigation />
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

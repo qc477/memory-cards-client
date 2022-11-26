@@ -1,4 +1,3 @@
-import Deck from '@/components/Deck';
 import Icons from '@/components/Icons';
 import Card from '@/components/UI/Card';
 import TextField from '@/components/UI/TextField';
@@ -9,6 +8,7 @@ import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import cl from './AllDecks.module.css';
+import Deck from './components/Deck';
 
 const AllDecks: React.FC = () => {
   const { data: decks, isLoading } = deckAPI.useFetchAllDecksQuery('');

@@ -5,7 +5,7 @@ import { appSlice } from './store/reducers/AppSlice';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import AppRoutes from './components/AppRoutes';
-import './index.css';
+import './assets/index.css';
 
 const App: React.FC = () => {
   const { setIsScrollY } = appSlice.actions;

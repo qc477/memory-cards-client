@@ -1,5 +1,5 @@
 import React from 'react';
-import IconsSVG from './icons.svg';
+import IconsSVG from '../../assets/icons.svg';
 
 interface IconsProps {
   className?: string;
