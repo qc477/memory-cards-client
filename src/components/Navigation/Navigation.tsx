@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Icons from '../Icons';
 import cl from './Navigation.module.css';
 
-enum NavigationPath {
+enum Path {
   DECKS = 'decks',
   ADD = 'add',
   SETTINGS = 'settings',
@@ -14,52 +14,44 @@ enum NavigationPath {
 
 const Navigation: React.FC = () => {
   return (
-    <nav>
-      <ul className={cl.navList}>
-        <li>
-          <NavLink
-            to={NavigationPath.DECKS}
-            className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
-          >
-            <Icons className={cl.navIcon} name='hline' />
+    <nav className={cl.navigation}>
+      <ul className={cl.list}>
+        <li className={cl.item}>
+          <NavLink to={Path.DECKS} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+            <span className={cl.iconWrapper}>
+              <Icons className={cl.iconCircle} name='circle' />
+            </span>
             Колоды
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to={NavigationPath.ADD}
-            className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
-          >
-            <Icons className={cl.navIcon} name='hline' />
+        <li className={cl.item}>
+          <NavLink to={Path.ADD} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+            <span className={cl.iconWrapper}>
+              <Icons className={cl.iconCircle} name='circle' />
+            </span>
             Создать колоду
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to={NavigationPath.SETTINGS}
-            className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
-          >
-            <Icons className={cl.navIcon} name='settings' />
+        <li className={cl.item}>
+          <NavLink to={Path.SETTINGS} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+            <Icons className={cl.icon} name='settings' width='28' height='28' />
             Настройки
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to={NavigationPath.ABOUT}
-            className={({ isActive }) => (isActive ? `${cl.navLink} ${cl.active}` : cl.navLink)}
-          >
-            <Icons className={cl.navIcon} name='info' />О приложении
+        <li className={cl.item}>
+          <NavLink to={Path.ABOUT} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+            <Icons className={cl.icon} name='info' width='28' height='28' />О приложении
           </NavLink>
         </li>
-        <li>
-          <NavLink to={NavigationPath.DONATION} className={cl.navLink}>
-            <Icons className={cl.navIcon} name='monetization' />
+        <li className={cl.item}>
+          <NavLink to={Path.DONATION} className={cl.link}>
+            <Icons className={cl.icon} name='monetization' width='28' height='28' />
             Поддержать проект
           </NavLink>
         </li>
-        <li>
-          <a href={NavigationPath.SOURCE_CODE} className={cl.navLink}>
-            <Icons className={cl.navIcon} name='code' />
+        <li className={cl.item}>
+          <a href={Path.SOURCE_CODE} className={cl.link}>
+            <Icons className={cl.icon} name='code' width='28' height='28' />
             Исходный код
           </a>
         </li>
