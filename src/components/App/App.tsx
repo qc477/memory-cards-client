@@ -1,11 +1,11 @@
+import '@/assets/index.css';
+import { appSlice } from '@/store/reducers/AppSlice';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { appSlice } from './store/reducers/AppSlice';
-import Header from './components/Header';
-import Menu from './components/Menu';
-import AppRoutes from './components/AppRoutes';
-import './assets/index.css';
+import Header from '../Header';
+import Menu from '../Menu';
+import AppRoutes from './AppRoutes';
 
 const App: React.FC = () => {
   const { setIsScrollY } = appSlice.actions;
