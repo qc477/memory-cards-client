@@ -2,10 +2,10 @@ import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import FormCreatingDeck from './FormCreatingDeck';
-import FormCreatingCard from './FormCreatingCard';
-import CardsPreview from './CardsPreview';
-import Main from './Main';
+import FormCreatingDeck from './components/FormCreatingDeck';
+import FormCreatingCard from './components/FormCreatingCard';
+import CardsPreview from './components/CardsPreview';
+import Main from './components/Main';
 
 const AddDeck: React.FC = () => {
   const { changeTitleText } = headerSlice.actions;
