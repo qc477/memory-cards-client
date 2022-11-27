@@ -13,33 +13,38 @@ enum Path {
 }
 
 const Navigation: React.FC = () => {
+  const getClassName = (isActive: boolean): string => {
+    if (isActive) return `${cl.link} ${cl.active}`;
+    return cl.link;
+  };
+
   return (
     <nav className={cl.navigation}>
       <ul className={cl.list}>
         <li className={cl.item}>
-          <NavLink to={Path.DECKS} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+          <NavLink to={Path.DECKS} className={({ isActive }) => getClassName(isActive)}>
             <span className={cl.iconWrapper}>
-              <Icons className={cl.iconCircle} name='circle' />
+              <Icons className={cl.iconCircle} name='circle' width='16' height='16' />
             </span>
             Колоды
           </NavLink>
         </li>
         <li className={cl.item}>
-          <NavLink to={Path.ADD} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+          <NavLink to={Path.ADD} className={({ isActive }) => getClassName(isActive)}>
             <span className={cl.iconWrapper}>
-              <Icons className={cl.iconCircle} name='circle' />
+              <Icons className={cl.iconCircle} name='circle' width='16' height='16' />
             </span>
             Создать колоду
           </NavLink>
         </li>
         <li className={cl.item}>
-          <NavLink to={Path.SETTINGS} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+          <NavLink to={Path.SETTINGS} className={({ isActive }) => getClassName(isActive)}>
             <Icons className={cl.icon} name='settings' width='28' height='28' />
             Настройки
           </NavLink>
         </li>
         <li className={cl.item}>
-          <NavLink to={Path.ABOUT} className={({ isActive }) => (isActive ? `${cl.link} ${cl.active}` : cl.link)}>
+          <NavLink to={Path.ABOUT} className={({ isActive }) => getClassName(isActive)}>
             <Icons className={cl.icon} name='info' width='28' height='28' />О приложении
           </NavLink>
         </li>
