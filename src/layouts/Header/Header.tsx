@@ -1,11 +1,11 @@
+import IconButton from '@/components/ui/IconButton';
+import Icons from '@/components/ui/Icons';
+import Title from '@/components/ui/Title';
 import { useAppSelector } from '@/hooks/redux';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Icons from '../Icons';
-import IconButton from '../UI/IconButton';
-import Title from '../UI/Title';
 import cl from './Header.module.css';
 
 const Header: React.FC = () => {

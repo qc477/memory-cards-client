@@ -1,6 +1,6 @@
-import Icons from '@/components/Icons';
-import Card from '@/components/UI/Card';
-import TextField from '@/components/UI/TextField';
+import Icons from '@/components/ui/Icons';
+import Card from '@/components/ui/Card';
+import TextField from '@/components/ui/TextField';
 import { useDecks } from '@/hooks/useDecks';
 import { deckAPI } from '@/services/DeckService';
 import { headerSlice } from '@/store/reducers/HeaderSlice';

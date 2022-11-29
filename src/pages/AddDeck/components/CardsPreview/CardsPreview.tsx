@@ -1,5 +1,5 @@
-import Card from '@/components/UI/Card';
-import Text from '@/components/UI/Text';
+import Card from '@/components/ui/Card';
+import Text from '@/components/ui/Text';
 import { useAppSelector } from '@/hooks/redux';
 import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
 import React, { useMemo } from 'react';

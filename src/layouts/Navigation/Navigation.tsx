@@ -1,6 +1,6 @@
+import Icons from '@/components/ui/Icons';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Icons from '../Icons';
 import cl from './Navigation.module.css';
 
 enum Path {

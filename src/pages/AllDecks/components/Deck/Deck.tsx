@@ -1,9 +1,9 @@
-import Icons from '@/components/Icons';
-import Button from '@/components/UI/Button';
-import DateTime from '@/components/UI/DateTime';
-import IconButton from '@/components/UI/IconButton';
-import Label from '@/components/UI/Label';
-import Title from '@/components/UI/Title';
+import Icons from '@/components/ui/Icons';
+import Button from '@/components/ui/Button';
+import DateTime from '@/components/ui/DateTime';
+import IconButton from '@/components/ui/IconButton';
+import Label from '@/components/ui/Label';
+import Title from '@/components/ui/Title';
 import { IDeck } from '@/models/IDeck';
 import React from 'react';
 import cl from './Deck.module.css';
@@ -14,7 +14,7 @@ const Deck: React.FC<IDeck> = ({ id, title, totalCards, totalExercises, dateLast
   return (
     <div className={cl.deck}>
       <div className={cl.deckHeader}>
-        <Title className={cl.deckTitle} size='h2'>
+        <Title className={cl.deckTitle} type='h2'>
           {title}
         </Title>
         <IconButton color='faintStrongTextDown'>

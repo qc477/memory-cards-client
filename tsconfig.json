@@ -20,9 +20,9 @@
     "jsx": "react-jsx",
     "paths": {
       "@/assets/*": ["src/assets/*"],
+      "@/layouts/*": ["src/layouts/*"],
       "@/models/*": ["src/models/*"],
       "@/components/*": ["src/components/*"],
-      "@/ui/*": ["src/components/UI/*"],
       "@/services/*": ["src/services/*"],
       "@/store/*": ["src/store/*"],
       "@/hooks/*": ["src/hooks/*"]

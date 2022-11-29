@@ -10,7 +10,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ children, className }) => {
   const styles = clsx([cl.card, className]);
 
-  return <article className={styles}>{children}</article>;
+  return <div className={styles}>{children}</div>;
 };
 
 export default Card;

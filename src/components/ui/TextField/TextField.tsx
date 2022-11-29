@@ -1,8 +1,8 @@
-import Icons from '@/components/Icons';
 import clsx from 'clsx';
 import React, { useState } from 'react';
+import InputBase from '../Base/InputBase';
 import IconButton from '../IconButton';
-import InputBase from '../__base__/InputBase';
+import Icons from '../Icons';
 import cl from './TextField.module.css';
 
 interface TextFieldProps {

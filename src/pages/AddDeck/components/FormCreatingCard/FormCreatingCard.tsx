@@ -1,5 +1,5 @@
-import TextButton from '@/components/UI/TextButton';
-import TextField from '@/components/UI/TextField';
+import TextButton from '@/components/ui/TextButton';
+import TextField from '@/components/ui/TextField';
 import { useAppSelector } from '@/hooks/redux';
 import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
 import React, { useState } from 'react';

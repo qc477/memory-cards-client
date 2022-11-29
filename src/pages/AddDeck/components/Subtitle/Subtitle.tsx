@@ -1,5 +1,5 @@
-import Label from '@/components/UI/Label';
-import Title from '@/components/UI/Title';
+import Label from '@/components/ui/Label';
+import Title from '@/components/ui/Title';
 import React from 'react';
 import cl from './Subtitle.module.css';
 
@@ -12,7 +12,7 @@ const Subtitle: React.FC<SubtitleProps> = ({ text, cardsCounter }) => {
   return (
     <div className={cl.subtitle}>
       <span className={cl.line}></span>
-      <Title className={cl.text} size='h2'>
+      <Title className={cl.text} type='h2'>
         {text}
       </Title>
       <span className={cl.line}></span>
