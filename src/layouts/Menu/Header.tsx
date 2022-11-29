@@ -1,8 +1,8 @@
+import Title from '@/components/ui/Title';
+import IconButton from '@/components/ui/IconButton';
+import Icons from '@/components/ui/Icons';
 import React from 'react';
 import cl from './Menu.module.css';
-import Title from '../UI/Title';
-import IconButton from '../UI/IconButton';
-import Icons from '../Icons';
 
 interface HeaderProps {
   onClose: () => void;

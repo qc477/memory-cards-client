@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
-import InputBase from '../Base/InputBase';
+import InputBase from '../base/InputBase';
 import IconButton from '../IconButton';
 import Icons from '../Icons';
 import cl from './TextField.module.css';
