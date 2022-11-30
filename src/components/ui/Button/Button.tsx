@@ -9,9 +9,10 @@ interface ButtonProps {
   children?: string;
   disabled?: boolean;
   size?: Size;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ startIcon, children, size = 'medium', disabled = false }) => {
+const Button: React.FC<ButtonProps> = ({ startIcon, children, onClick, size = 'medium', disabled = false }) => {
   const styles = clsx(cl.button, {
     [cl.small]: size === 'small',
     [cl.medium]: size === 'medium',
@@ -21,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({ startIcon, children, size = 'medium', d
   });
 
   return (
-    <button className={styles} type='button' disabled={disabled}>
+    <button className={styles} type='button' disabled={disabled} onClick={onClick}>
       {startIcon}
       {children}
     </button>

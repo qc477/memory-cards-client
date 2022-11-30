@@ -11,6 +11,12 @@ const FormCreatingDeck: React.FC = () => {
   const { setName } = pageAddDeckSlice.actions;
   const dispatch = useDispatch();
 
+  const create = () => {
+    if (name.length === 0) {
+      alert('(!) У колоды должно быть название.');
+    }
+  };
+
   return (
     <form className={cl.form} onSubmit={(e) => e.preventDefault()}>
       <TextField
@@ -20,7 +26,7 @@ const FormCreatingDeck: React.FC = () => {
         onClear={() => dispatch(setName(''))}
       />
       <div className={cl.buttonBox}>
-        <Button>Создать</Button>
+        <Button onClick={create}>Создать</Button>
       </div>
     </form>
   );

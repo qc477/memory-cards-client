@@ -12,6 +12,7 @@ interface TextFieldProps {
   placeholder?: string;
   onClear?: () => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const TextField: React.FC<TextFieldProps> = ({ startIcon, type = 'text', value, placeholder, onClear, onChange }) => {
