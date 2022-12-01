@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import PageLoader from '../loader/PageLoader';
 
 const AllDecks = React.lazy(() => import('../../pages/AllDecks'));
-const AddDeck = React.lazy(() => import('../../pages/AddDeck'));
+const DeckManagement = React.lazy(() => import('../../pages/DeckManagement'));
 const About = React.lazy(() => import('../../pages/About'));
 const Settings = React.lazy(() => import('../../pages/Settings'));
 
@@ -19,10 +19,10 @@ const AppRoutes: React.FC = () => {
         }
       />
       <Route
-        path='add'
+        path='deck-management'
         element={
           <React.Suspense fallback={<PageLoader />}>
-            <AddDeck />
+            <DeckManagement />
           </React.Suspense>
         }
       />

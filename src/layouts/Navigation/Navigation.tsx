@@ -5,7 +5,7 @@ import cl from './Navigation.module.css';
 
 enum Path {
   DECKS = 'decks',
-  ADD = 'add',
+  DECK_MANAGEMENT = 'deck-management',
   SETTINGS = 'settings',
   ABOUT = 'about',
   DONATION = 'donation',
@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
           </NavLink>
         </li>
         <li className={cl.item}>
-          <NavLink to={Path.ADD} className={({ isActive }) => getClassName(isActive)}>
+          <NavLink to={Path.DECK_MANAGEMENT} className={({ isActive }) => getClassName(isActive)}>
             <span className={cl.iconWrapper}>
               <Icons className={cl.iconCircle} name='circle' width='16' height='16' />
             </span>

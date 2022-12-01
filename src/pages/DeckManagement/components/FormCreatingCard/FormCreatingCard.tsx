@@ -2,15 +2,15 @@ import Button from '@/components/ui/Button';
 import TextField from '@/components/ui/TextField';
 import { useAppSelector } from '@/hooks/redux';
 import { useTextField } from '@/hooks/useTextField';
-import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
+import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import Counter from '../Counter';
 import cl from './FormCreatingCard.module.css';
 
 const FormCreatingCard: React.FC = () => {
-  const { totalCards } = useAppSelector((state) => state.pageAddDeckReducer);
-  const { setCards } = pageAddDeckSlice.actions;
+  const { totalCards } = useAppSelector((state) => state.deckManagementReducer);
+  const { setCards } = deckManagementSlice.actions;
   const question = useTextField('', { isEmpty: true });
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();

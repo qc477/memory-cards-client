@@ -2,17 +2,17 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type Card = { question: string; answer: string };
 
-interface AddDeckState {
+interface DeckManagementState {
   totalCards: number;
   cards: Card[];
 }
 
-const initialState: AddDeckState = {
+const initialState: DeckManagementState = {
   totalCards: 0,
   cards: [],
 };
 
-export const pageAddDeckSlice = createSlice({
+export const deckManagementSlice = createSlice({
   name: 'addDeck',
   initialState,
   reducers: {
@@ -25,4 +25,4 @@ export const pageAddDeckSlice = createSlice({
   },
 });
 
-export default pageAddDeckSlice.reducer;
+export default deckManagementSlice.reducer;

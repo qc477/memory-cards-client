@@ -7,7 +7,7 @@ import FormCreatingCard from './components/FormCreatingCard';
 import CardsPreview from './components/CardsPreview';
 import Main from './components/Main';
 
-const AddDeck: React.FC = () => {
+const DeckManagement: React.FC = () => {
   const { changeTitleText } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
@@ -25,5 +25,4 @@ const AddDeck: React.FC = () => {
     </Main>
   );
 };
-
-export default AddDeck;
+export default DeckManagement;
