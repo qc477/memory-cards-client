@@ -1,4 +1,4 @@
-.subtitle {
+.counter {
   display: flex;
   align-items: center;
   margin-top: 1rem;
@@ -11,25 +11,17 @@
   border-radius: 1px;
 }
 
-.line:first-child,
-.line:last-child {
-  width: 1rem;
-}
-
 .line:first-child {
+  width: 1rem;
   margin-right: 0.5rem;
-}
-
-.line:nth-of-type(2) {
-  flex-grow: 1;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
 }
 
 .line:last-child {
+  flex-grow: 1;
   margin-left: 0.5rem;
 }
 
 .text {
+  font-weight: 500;
   color: var(--faint-strong-text-down);
 }

@@ -8,10 +8,10 @@ import cl from './CardsPreview.module.css';
 
 const CardsPreview: React.FC = () => {
   const { cards } = useAppSelector((state) => state.pageAddDeckReducer);
-  const { setCardsCounter } = pageAddDeckSlice.actions;
+  const { setTotalCards } = pageAddDeckSlice.actions;
   const dispatch = useDispatch();
 
-  useMemo(() => dispatch(setCardsCounter(cards.length)), [cards]);
+  useMemo(() => dispatch(setTotalCards(cards.length)), [cards]);
 
   return (
     <div className={cl.cardsPreview}>

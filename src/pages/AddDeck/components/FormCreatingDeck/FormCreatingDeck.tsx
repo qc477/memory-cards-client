@@ -1,32 +1,21 @@
 import Button from '@/components/ui/Button';
 import TextField from '@/components/ui/TextField';
-import { useAppSelector } from '@/hooks/redux';
-import { pageAddDeckSlice } from '@/store/reducers/PageAddDeckSlice';
+import { useTextField } from '@/hooks/useTextField';
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import cl from './FormCreatingDeck.module.css';
 
 const FormCreatingDeck: React.FC = () => {
-  const { name } = useAppSelector((state) => state.pageAddDeckReducer);
-  const { setName } = pageAddDeckSlice.actions;
-  const dispatch = useDispatch();
+  const name = useTextField('', { isEmpty: true });
 
-  const create = () => {
-    if (name.length === 0) {
-      alert('(!) У колоды должно быть название.');
-    }
-  };
+  const create = () => {};
 
   return (
     <form className={cl.form} onSubmit={(e) => e.preventDefault()}>
-      <TextField
-        value={name}
-        placeholder='Название'
-        onChange={(e) => dispatch(setName(e.target.value))}
-        onClear={() => dispatch(setName(''))}
-      />
+      <TextField value={name.value} placeholder='Название' onChange={(e) => name.onChange(e)} onClear={name.onClear} />
       <div className={cl.buttonBox}>
-        <Button onClick={create}>Создать</Button>
+        <Button disabled={name.valid.isEmpty ? true : false} onClick={create}>
+          Создать
+        </Button>
       </div>
     </form>
   );

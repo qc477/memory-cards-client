@@ -2,21 +2,20 @@ import React from 'react';
 import clsx from 'clsx';
 import cl from './Button.module.css';
 
-type Size = 'small' | 'medium' | 'big';
+type Variant = 'default' | 'text';
 
 interface ButtonProps {
   startIcon?: React.ReactNode;
+  variant?: Variant;
   children?: string;
   disabled?: boolean;
-  size?: Size;
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ startIcon, children, onClick, size = 'medium', disabled = false }) => {
+const Button: React.FC<ButtonProps> = ({ startIcon, children, onClick, variant = 'default', disabled = false }) => {
   const styles = clsx(cl.button, {
-    [cl.small]: size === 'small',
-    [cl.medium]: size === 'medium',
-    [cl.big]: size === 'big',
+    [cl.variantDefault]: variant === 'default',
+    [cl.variantText]: variant === 'text',
     [cl.disabled]: disabled,
     [cl.active]: !disabled,
   });

@@ -1,10 +1,7 @@
+import { Validation } from '@/models/IValidation';
 import { useEffect, useState } from 'react';
 
-interface Validations {
-  isEmpty: boolean;
-}
-
-export const useValidation = (value: string, validations: Validations): Validations => {
+export const useValidation = (value: string, validations: Validation): Validation => {
   const [isEmpty, setEmpty] = useState<boolean>(true);
 
   useEffect(() => {

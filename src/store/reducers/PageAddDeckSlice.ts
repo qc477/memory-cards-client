@@ -3,14 +3,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type Card = { question: string; answer: string };
 
 interface AddDeckState {
-  name: string;
-  cardsCounter: number;
+  totalCards: number;
   cards: Card[];
 }
 
 const initialState: AddDeckState = {
-  name: '',
-  cardsCounter: 0,
+  totalCards: 0,
   cards: [],
 };
 
@@ -18,11 +16,8 @@ export const pageAddDeckSlice = createSlice({
   name: 'addDeck',
   initialState,
   reducers: {
-    setName(state, action: PayloadAction<string>) {
-      state.name = action.payload;
-    },
-    setCardsCounter(state, action: PayloadAction<number>) {
-      state.cardsCounter = action.payload;
+    setTotalCards(state, action: PayloadAction<number>) {
+      state.totalCards = action.payload;
     },
     setCards(state, action: PayloadAction<Card>) {
       state.cards = [action.payload, ...state.cards];
