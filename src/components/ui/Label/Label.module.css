@@ -13,8 +13,8 @@
 }
 
 .critical {
-  color: var(--base-weak);
-  background-color: var(--critic-strong);
+  color: var(--critical-strong);
+  background-color: var(--critic-weak);
 }
 
 .success {
