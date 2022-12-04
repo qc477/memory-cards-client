@@ -30,8 +30,12 @@ const CardsPreview: React.FC = () => {
               <Text>{card.answer}</Text>
             </div>
             <div className={cl.buttonsWrapper}>
-              <Button variant='text' startIcon={<Icons name='edit' />}>Редактировать</Button>
-              <Button variant='text' startIcon={<Icons name='delete' />}>Удалить</Button>
+              <Button className={cl.buttonEdit} variant='text' color='gray' startIcon={<Icons name='edit' />}>
+                Редактировать
+              </Button>
+              <Button className={cl.buttonDelete} variant='text' color='critic' startIcon={<Icons name='delete' />}>
+                Удалить
+              </Button>
             </div>
           </div>
         </Card>

@@ -47,25 +47,53 @@
 }
 
 /* Text Active */
-.variantText.active {
+.text.active {
   color: var(--accent-strong);
   background-color: transparent;
 }
 
-.variantText.active svg {
+.text.active svg {
   fill: var(--accent-strong);
 }
 
-.variantText:hover.active {
+.text:hover.active {
   background-color: var(--faint-weak-up);
 }
 
+/* Text Critic */
+.textCritic.active {
+  color: var(--critic-strong);
+  background-color: transparent;
+}
+
+.textCritic.active svg {
+  fill: var(--critic-strong);
+}
+
+.textCritic:hover.active {
+  background-color: var(--critic-weak);
+}
+
+/* Text Gray */
+.textGray.active {
+  color: var(--faint-back-strong);
+  background-color: transparent;
+}
+
+.textGray.active svg {
+  fill: var(--faint-back-strong);
+}
+
+.textGray:hover.active {
+  background-color: var(--faint-weak);
+}
+
 /* Text Disabled */
-.variantText.disabled {
+.text.disabled {
   color: var(--faint-weak-text);
   background-color: transparent;
 }
 
-.variantText.disabled svg {
+.text.disabled svg {
   fill: var(--accent-weak-up);
 }
