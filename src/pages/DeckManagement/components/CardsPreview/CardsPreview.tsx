@@ -1,5 +1,6 @@
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
+import Icons from '@/components/ui/Icons';
 import Text from '@/components/ui/Text';
 import { useAppSelector } from '@/hooks/redux';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
@@ -29,8 +30,8 @@ const CardsPreview: React.FC = () => {
               <Text>{card.answer}</Text>
             </div>
             <div className={cl.buttonsWrapper}>
-              <Button variant='text'>Редактировать</Button>
-              <Button variant='text'>Удалить</Button>
+              <Button variant='text' startIcon={<Icons name='edit' />}>Редактировать</Button>
+              <Button variant='text' startIcon={<Icons name='delete' />}>Удалить</Button>
             </div>
           </div>
         </Card>
