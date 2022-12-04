@@ -1,3 +1,4 @@
+import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import Text from '@/components/ui/Text';
 import { useAppSelector } from '@/hooks/redux';
@@ -19,9 +20,17 @@ const CardsPreview: React.FC = () => {
       {cards.map((card, index) => (
         <Card key={index}>
           <div className={cl.wrapper}>
-            <Text>{card.question}</Text>
+            <div className={cl.wrapperItem}>
+              <Text>{card.question}</Text>
+            </div>
             <span className={cl.separator}></span>
-            <Text>{card.answer}</Text>
+            <div className={cl.wrapperItem}>
+              <Text>{card.answer}</Text>
+            </div>
+            <div className={cl.buttonsWrapper}>
+              <Button variant='text'>Редактировать</Button>
+              <Button variant='text'>Удалить</Button>
+            </div>
           </div>
         </Card>
       ))}

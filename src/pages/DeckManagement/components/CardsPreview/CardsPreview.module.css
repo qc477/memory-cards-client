@@ -3,18 +3,28 @@
 }
 
 .wrapper {
-  padding: 1rem;
   color: var(--faint-strong-text);
   text-align: center;
+}
+
+.wrapperItem {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .separator {
   display: block;
   width: 100%;
   height: 1px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   background-color: var(--faint-weak-up);
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 786px) {
