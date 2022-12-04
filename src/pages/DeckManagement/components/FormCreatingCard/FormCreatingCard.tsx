@@ -1,6 +1,5 @@
 import Button from '@/components/ui/Button';
 import TextField from '@/components/ui/TextField';
-import { useAppSelector } from '@/hooks/redux';
 import { useTextField } from '@/hooks/useTextField';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
 import React from 'react';
@@ -9,8 +8,7 @@ import Counter from '../Counter';
 import cl from './FormCreatingCard.module.css';
 
 const FormCreatingCard: React.FC = () => {
-  const { totalCards } = useAppSelector((state) => state.deckManagementReducer);
-  const { setCards, setCard } = deckManagementSlice.actions;
+  const { setReadingFile, setCards, setCard } = deckManagementSlice.actions;
   const question = useTextField('', { isEmpty: true });
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();
@@ -31,13 +29,16 @@ const FormCreatingCard: React.FC = () => {
 
     reader.onload = () => {
       const content = JSON.parse(JSON.parse(JSON.stringify(reader.result)));
+      dispatch(setReadingFile(false));
       dispatch(setCards(content));
     };
+
+    reader.onloadstart = () => dispatch(setReadingFile(true));
   };
 
   return (
     <div className={cl.formWrapper}>
-      <Counter totalCards={totalCards} />
+      <Counter />
       <form className={cl.form} onSubmit={(e) => e.preventDefault()}>
         <TextField
           value={question.value}

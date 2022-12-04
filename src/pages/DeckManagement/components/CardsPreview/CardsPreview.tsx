@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import cl from './CardsPreview.module.css';
 
 const CardsPreview: React.FC = () => {
-  const { cards } = useAppSelector((state) => state.deckManagementReducer);
+  const { isReadingFaile, cards } = useAppSelector((state) => state.deckManagementReducer);
   const { setTotalCards } = deckManagementSlice.actions;
   const dispatch = useDispatch();
 
@@ -15,6 +15,7 @@ const CardsPreview: React.FC = () => {
 
   return (
     <div className={cl.cardsPreview}>
+      {isReadingFaile && <p>Reading file...</p>}
       {cards.map((card, index) => (
         <Card key={index}>
           <div className={cl.wrapper}>
