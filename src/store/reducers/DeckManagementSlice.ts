@@ -13,13 +13,16 @@ const initialState: DeckManagementState = {
 };
 
 export const deckManagementSlice = createSlice({
-  name: 'addDeck',
+  name: 'deckManagement',
   initialState,
   reducers: {
     setTotalCards(state, action: PayloadAction<number>) {
       state.totalCards = action.payload;
     },
-    setCards(state, action: PayloadAction<Card>) {
+    setCards(state, action: PayloadAction<Card[]>) {
+      state.cards = action.payload;
+    },
+    setCard(state, action: PayloadAction<Card>) {
       state.cards = [action.payload, ...state.cards];
     },
   },

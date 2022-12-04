@@ -10,15 +10,29 @@ import cl from './FormCreatingCard.module.css';
 
 const FormCreatingCard: React.FC = () => {
   const { totalCards } = useAppSelector((state) => state.deckManagementReducer);
-  const { setCards } = deckManagementSlice.actions;
+  const { setCards, setCard } = deckManagementSlice.actions;
   const question = useTextField('', { isEmpty: true });
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();
 
   const add = () => {
-    dispatch(setCards({ question: question.value, answer: answer.value }));
+    dispatch(setCard({ question: question.value, answer: answer.value }));
     question.onClear();
     answer.onClear();
+  };
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+    const reader = new FileReader();
+
+    if (file) {
+      reader.readAsText(file);
+    }
+
+    reader.onload = () => {
+      const content = JSON.parse(JSON.parse(JSON.stringify(reader.result)));
+      dispatch(setCards(content));
+    };
   };
 
   return (
@@ -38,7 +52,7 @@ const FormCreatingCard: React.FC = () => {
           onClear={answer.onClear}
         />
         <div className={cl.buttonsWrapper}>
-          <Button variant='text'>Импортировать из файла</Button>
+          <input onChange={onChange} type='file' accept='application/json' />
           <Button variant='text' disabled={question.valid.isEmpty || answer.valid.isEmpty ? true : false} onClick={add}>
             Добавить
           </Button>

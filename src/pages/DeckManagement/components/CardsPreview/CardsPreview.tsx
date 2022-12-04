@@ -15,8 +15,8 @@ const CardsPreview: React.FC = () => {
 
   return (
     <div className={cl.cardsPreview}>
-      {cards.map((card) => (
-        <Card>
+      {cards.map((card, index) => (
+        <Card key={index}>
           <div className={cl.wrapper}>
             <Text>{card.question}</Text>
             <span className={cl.separator}></span>

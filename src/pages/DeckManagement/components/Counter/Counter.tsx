@@ -6,7 +6,7 @@ interface CounterProps {
   totalCards: number;
 }
 
-const Subtitle: React.FC<CounterProps> = ({ totalCards }) => {
+const Counter: React.FC<CounterProps> = ({ totalCards }) => {
   return (
     <div className={cl.counter}>
       <span className={cl.line}></span>
@@ -16,4 +16,4 @@ const Subtitle: React.FC<CounterProps> = ({ totalCards }) => {
   );
 };
 
-export default Subtitle;
+export default Counter;
