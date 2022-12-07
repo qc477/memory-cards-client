@@ -1,11 +1,10 @@
+import { ICard } from '@/models/ICard';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-type Card = { question: string; answer: string };
 
 interface DeckManagementState {
   isReadingFaile: boolean;
   totalCards: number;
-  cards: Card[];
+  cards: ICard[];
 }
 
 const initialState: DeckManagementState = {
@@ -24,10 +23,10 @@ export const deckManagementSlice = createSlice({
     setTotalCards(state, action: PayloadAction<number>) {
       state.totalCards = action.payload;
     },
-    setCards(state, action: PayloadAction<Card[]>) {
+    setCards(state, action: PayloadAction<ICard[]>) {
       state.cards = action.payload;
     },
-    setCard(state, action: PayloadAction<Card>) {
+    setCard(state, action: PayloadAction<ICard>) {
       state.cards = [action.payload, ...state.cards];
     },
   },
