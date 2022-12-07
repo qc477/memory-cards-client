@@ -2,19 +2,21 @@ import Button from '@/components/ui/Button';
 import TextField from '@/components/ui/TextField';
 import { useTextField } from '@/hooks/useTextField';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Counter from '../Counter';
 import cl from './FormCreatingCard.module.css';
 
 const FormCreatingCard: React.FC = () => {
+  const [cardId, setCardId] = useState<number>(0);
   const { setReadingFile, setCards, setCard } = deckManagementSlice.actions;
   const question = useTextField('', { isEmpty: true });
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();
 
   const add = () => {
-    dispatch(setCard({ question: question.value, answer: answer.value }));
+    setCardId(cardId + 1)
+    dispatch(setCard({ id: cardId, question: question.value, answer: answer.value }));
     question.onClear();
     answer.onClear();
   };

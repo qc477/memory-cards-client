@@ -29,6 +29,9 @@ export const deckManagementSlice = createSlice({
     setCard(state, action: PayloadAction<ICard>) {
       state.cards = [action.payload, ...state.cards];
     },
+    removeCard(state, action: PayloadAction<number>) {
+      state.cards = state.cards.filter((card) => card.id != action.payload);
+    },
   },
 });
 

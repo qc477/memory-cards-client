@@ -4,23 +4,26 @@ import Icons from '@/components/ui/Icons';
 import Text from '@/components/ui/Text';
 import { useAppSelector } from '@/hooks/redux';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
-import { getRandomString } from '@/utils/random';
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import cl from './CardsPreview.module.css';
 
 const CardsPreview: React.FC = () => {
   const { isReadingFaile, cards } = useAppSelector((state) => state.deckManagementReducer);
-  const { setTotalCards } = deckManagementSlice.actions;
+  const { setTotalCards, removeCard } = deckManagementSlice.actions;
   const dispatch = useDispatch();
 
   useMemo(() => dispatch(setTotalCards(cards.length)), [cards]);
+
+  const remove = (cardId: number) => {
+    dispatch(removeCard(cardId));
+  };
 
   return (
     <div className={cl.cardsPreview}>
       {isReadingFaile && <p>Reading file...</p>}
       {cards.map((card) => (
-        <Card key={getRandomString()}>
+        <Card key={card.id}>
           <div className={cl.wrapper}>
             <div className={cl.wrapperItem}>
               <Text>{card.question}</Text>
@@ -33,7 +36,13 @@ const CardsPreview: React.FC = () => {
               <Button className={cl.buttonEdit} variant='text' color='gray' startIcon={<Icons name='edit' />}>
                 Редактировать
               </Button>
-              <Button className={cl.buttonDelete} variant='text' color='critic' startIcon={<Icons name='delete' />}>
+              <Button
+                className={cl.buttonDelete}
+                variant='text'
+                color='critic'
+                startIcon={<Icons name='delete' />}
+                onClick={() => remove(card.id)}
+              >
                 Удалить
               </Button>
             </div>

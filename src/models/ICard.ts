@@ -1,5 +1,5 @@
 export interface ICard {
-  id: number | string;
+  id: number;
   question: string;
   answer: string;
   deckId?: number;
