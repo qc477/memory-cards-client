@@ -4,7 +4,7 @@ import Icons from '@/components/ui/Icons';
 import Text from '@/components/ui/Text';
 import { useAppSelector } from '@/hooks/redux';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
-import { getRandomKey } from '@/utils/randomKeys';
+import { getRandomString } from '@/utils/random';
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import cl from './CardsPreview.module.css';
@@ -20,7 +20,7 @@ const CardsPreview: React.FC = () => {
     <div className={cl.cardsPreview}>
       {isReadingFaile && <p>Reading file...</p>}
       {cards.map((card) => (
-        <Card key={getRandomKey()}>
+        <Card key={getRandomString()}>
           <div className={cl.wrapper}>
             <div className={cl.wrapperItem}>
               <Text>{card.question}</Text>
