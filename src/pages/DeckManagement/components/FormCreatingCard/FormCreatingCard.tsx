@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Button';
 import TextField from '@/components/ui/TextField';
 import { useTextField } from '@/hooks/useTextField';
+import { ICard } from '@/models/ICard';
 import { deckManagementSlice } from '@/store/reducers/DeckManagementSlice';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -9,14 +10,14 @@ import cl from './FormCreatingCard.module.css';
 
 const FormCreatingCard: React.FC = () => {
   const [cardId, setCardId] = useState<number>(0);
-  const { setReadingFile, setCards, setCard } = deckManagementSlice.actions;
+  const { setReadingFile, setCards } = deckManagementSlice.actions;
   const question = useTextField('', { isEmpty: true });
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();
 
   const add = () => {
-    setCardId(cardId + 1)
-    dispatch(setCard({ id: cardId, question: question.value, answer: answer.value }));
+    setCardId(cardId + 1);
+    dispatch(setCards([{ id: cardId, question: question.value, answer: answer.value }]));
     question.onClear();
     answer.onClear();
   };
@@ -24,18 +25,37 @@ const FormCreatingCard: React.FC = () => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     const reader = new FileReader();
+    const reBase = /Q:\s*.+\s*A:\s*.+/gm;
 
     if (file) {
       reader.readAsText(file);
     }
 
     reader.onload = () => {
-      const content = JSON.parse(JSON.parse(JSON.stringify(reader.result)));
+      const fileContent = typeof reader.result === 'string' ? reader.result : '';
+
+      let coincidence;
+      const cards = [];
+      let counter = cardId;
+
+      while ((coincidence = reBase.exec(fileContent)) !== null) {
+        const splitStr = coincidence[0].replace(/:\s*|\s+/g, ' ').split(/\s+/g);
+        const card: ICard = {
+          id: counter,
+          question: splitStr[1].replace(/^\s+|\s+$/g, ''),
+          answer: splitStr[splitStr.length - 1].replace(/^\s+|\s+$/g, ''),
+        };
+        cards.push(card);
+        counter++
+      }
+
       dispatch(setReadingFile(false));
-      dispatch(setCards(content));
+      dispatch(setCards(cards));
+      setCardId(cardId + cards.length)
     };
 
     reader.onloadstart = () => dispatch(setReadingFile(true));
+
   };
 
   return (
@@ -55,7 +75,7 @@ const FormCreatingCard: React.FC = () => {
           onClear={answer.onClear}
         />
         <div className={cl.buttonsWrapper}>
-          <input onChange={onChange} type='file' accept='application/json' />
+          <input onChange={onChange} type='file' accept='text/plain' />
           <Button variant='text' disabled={question.valid.isEmpty || answer.valid.isEmpty ? true : false} onClick={add}>
             Добавить
           </Button>
