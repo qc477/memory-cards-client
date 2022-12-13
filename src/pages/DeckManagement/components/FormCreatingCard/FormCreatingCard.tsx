@@ -15,14 +15,14 @@ const FormCreatingCard: React.FC = () => {
   const answer = useTextField('', { isEmpty: true });
   const dispatch = useDispatch();
 
-  const add = () => {
+  const onCreateCard = () => {
     setCardId(cardId + 1);
     dispatch(setCards([{ id: cardId, question: question.value, answer: answer.value }]));
     question.onClear();
     answer.onClear();
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onReadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     const reader = new FileReader();
     const reBase = /Q:\s*.+\s*A:\s*.+/gm;
@@ -46,16 +46,15 @@ const FormCreatingCard: React.FC = () => {
           answer: splitStr[splitStr.length - 1].replace(/^\s+|\s+$/g, ''),
         };
         cards.push(card);
-        counter++
+        counter++;
       }
 
       dispatch(setReadingFile(false));
       dispatch(setCards(cards));
-      setCardId(cardId + cards.length)
+      setCardId(cardId + cards.length);
     };
 
     reader.onloadstart = () => dispatch(setReadingFile(true));
-
   };
 
   return (
@@ -75,8 +74,12 @@ const FormCreatingCard: React.FC = () => {
           onClear={answer.onClear}
         />
         <div className={cl.buttonsWrapper}>
-          <input onChange={onChange} type='file' accept='text/plain' />
-          <Button variant='text' disabled={question.valid.isEmpty || answer.valid.isEmpty ? true : false} onClick={add}>
+          <input onChange={onReadFile} type='file' accept='text/plain' />
+          <Button
+            variant='text'
+            disabled={question.valid.isEmpty || answer.valid.isEmpty ? true : false}
+            onClick={onCreateCard}
+          >
             Добавить
           </Button>
         </div>
