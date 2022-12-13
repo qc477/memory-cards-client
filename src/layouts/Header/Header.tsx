@@ -6,7 +6,7 @@ import { menuSlice } from '@/store/reducers/MenuSlice';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import cl from './Header.module.css';
+import styles from './Header.module.css';
 
 const Header: React.FC = () => {
   const { titleText, isVisibleAddButton } = useAppSelector((state) => state.headerReducer);
@@ -20,16 +20,16 @@ const Header: React.FC = () => {
   }
 
   function moveToPage() {
-    navigate('add');
+    navigate('new-deck');
   }
 
   return (
-    <header className={isScrollY ? `${cl.header} ${cl.scroll}` : cl.header}>
-      <div className={cl.body}>
+    <header className={isScrollY ? `${styles.header} ${styles.scroll}` : styles.header}>
+      <div className={styles.body}>
         <IconButton color='faintStrong' onClick={openMenu}>
           <Icons name='menu' />
         </IconButton>
-        <Title className={cl.title}>{titleText}</Title>
+        <Title className={styles.title}>{titleText}</Title>
         {isVisibleAddButton ? (
           <IconButton color='faintStrong' onClick={moveToPage}>
             <Icons name='add' />
