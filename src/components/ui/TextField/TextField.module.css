@@ -1,23 +1,36 @@
 .textField {
   display: inline-flex;
   align-items: center;
-  padding: 0.375em 0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
   font-size: 1rem;
-  border: 0.125em solid var(--faint-strong);
-  border-radius: 1.8em;
+  border: 0.125em solid var(--faint-strong-down);
+  border-radius: 0.5em;
 }
 
-.textField.focuse {
+.inFocus {
   border-color: var(--accent-strong);
 }
 
-.textField svg {
-  width: 1.75em;
-  height: 1.75em;
-  fill: var(--faint-strong);
+.inFocus .startIcon {
+  fill: var(--accent-strong);
 }
 
-.inputWrapper {
-  flex-grow: 1;
-  background-color: cyan;
+.startIcon {
+  width: 1.75em;
+  height: 1.75em;
+  margin-right: 0.5em;
+  fill: var(--faint-strong-down);
+}
+
+.clearButton {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 0.5em;
+}
+
+@media (max-width: 786px) {
+  .textField {
+    min-height: 2.25em;
+  }
 }

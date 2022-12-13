@@ -5,13 +5,14 @@ import cl from './IconButton.module.css';
 type Color = 'faintStrong' | 'faintStrongDown' | 'faintStrongTextDown';
 
 interface IconButtonProps {
-  children: React.ReactNode;
+  className?: string;
+  children: React.ReactElement;
   color?: Color;
   onClick?: () => void;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({ children, color, onClick }) => {
-  const styles = clsx(cl.baseStyles, {
+const IconButton: React.FC<IconButtonProps> = ({ className, children, color, onClick }) => {
+  const styles = clsx([cl.baseStyles, className], {
     [cl.faintStrong]: color === 'faintStrong',
     [cl.faintStrongDown]: color === 'faintStrongDown',
     [cl.faintStrongTextDown]: color === 'faintStrongTextDown',
@@ -19,7 +20,7 @@ const IconButton: React.FC<IconButtonProps> = ({ children, color, onClick }) => 
 
   return (
     <button className={styles} onClick={onClick}>
-      {children}
+      {React.cloneElement(children, { className: cl.icon })}
     </button>
   );
 };

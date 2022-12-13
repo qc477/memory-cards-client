@@ -6,7 +6,7 @@ import Icons from '../Icons';
 import cl from './TextField.module.css';
 
 interface TextFieldProps {
-  startIcon?: React.ReactNode;
+  startIcon?: React.ReactElement;
   type?: string;
   value?: string;
   placeholder?: string;
@@ -16,15 +16,16 @@ interface TextFieldProps {
 }
 
 const TextField: React.FC<TextFieldProps> = ({ startIcon, type = 'text', value, placeholder, onClear, onChange }) => {
-  const [isFocuse, setIsFocuse] = useState<boolean>(false);
-  const onFocus = () => setIsFocuse(true);
-  const onBlur = () => setIsFocuse(false);
-  const styles = clsx(cl.textField, { [cl.focuse]: isFocuse });
+  const [isFocus, setFocus] = useState<boolean>(false);
+  const onFocus = () => setFocus(true);
+  const onBlur = () => setFocus(false);
+  const styles = clsx(cl.textField, { [cl.inFocus]: isFocus });
 
   return (
     <div className={styles}>
-      {typeof startIcon === 'undefined' ? null : startIcon}
+      {typeof startIcon === 'undefined' ? null : React.cloneElement(startIcon, { className: cl.startIcon })}
       <InputBase
+        className={cl.input}
         type={type}
         value={value}
         placeholder={placeholder}
@@ -32,13 +33,11 @@ const TextField: React.FC<TextFieldProps> = ({ startIcon, type = 'text', value, 
         onFocus={onFocus}
         onBlur={onBlur}
       />
-      <div>
-        {typeof onClear === 'undefined' ? null : (
-          <IconButton color='faintStrongDown' onClick={onClear}>
-            <Icons name='clear' />
-          </IconButton>
-        )}
-      </div>
+      {typeof onClear === 'undefined' ? null : (
+        <IconButton className={cl.clearButton} color='faintStrongDown' onClick={onClear}>
+          <Icons name='close-small-medium' />
+        </IconButton>
+      )}
     </div>
   );
 };
