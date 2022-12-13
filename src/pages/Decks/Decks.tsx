@@ -7,10 +7,10 @@ import { headerSlice } from '@/store/reducers/HeaderSlice';
 import { menuSlice } from '@/store/reducers/MenuSlice';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import cl from './AllDecks.module.css';
-import Deck from './components/Deck';
+import styles from './Decks.module.css';
+import DeckItem from './components/DeckItem';
 
-const AllDecks: React.FC = () => {
+const Decks: React.FC = () => {
   const { data: decks, isLoading } = deckAPI.useFetchAllDecksQuery('');
   const { changeTitleText, visibleAddButton } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
@@ -29,7 +29,7 @@ const AllDecks: React.FC = () => {
   }, []);
 
   return (
-    <main className={cl.main}>
+    <main className={styles.main}>
       <TextField
         startIcon={<Icons name='search' />}
         value={query}
@@ -38,12 +38,12 @@ const AllDecks: React.FC = () => {
         onChange={(e) => setQuery(e.target.value)}
         onClear={() => setQuery('')}
       />
-      <div className={cl.wrapper}>
+      <div className={styles.wrapper}>
         {isLoading && <p>Loading...</p>}
         {searchDecks &&
           searchDecks.map((deck) => (
             <Card key={deck.id}>
-              <Deck
+              <DeckItem
                 id={deck.id}
                 title={deck.title}
                 totalCards={deck.totalCards}
@@ -58,4 +58,4 @@ const AllDecks: React.FC = () => {
   );
 };
 
-export default AllDecks;
+export default Decks;

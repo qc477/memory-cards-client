@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import FormCreatingDeck from './components/FormCreatingDeck';
 import FormCreatingCard from './components/FormCreatingCard';
 import CardsPreview from './components/CardsPreview';
-import Main from './components/Main';
+import styles from './NewDeck.modules.css';
 
-const DeckManagement: React.FC = () => {
+const NewDeck: React.FC = () => {
   const { changeTitleText } = headerSlice.actions;
   const { setIsOpen } = menuSlice.actions;
   const dispatch = useDispatch();
@@ -18,11 +18,11 @@ const DeckManagement: React.FC = () => {
   }, []);
 
   return (
-    <Main>
+    <main className={styles.main}>
       <FormCreatingDeck />
       <FormCreatingCard />
       <CardsPreview />
-    </Main>
+    </main>
   );
 };
-export default DeckManagement;
+export default NewDeck;
