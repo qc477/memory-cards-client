@@ -39,10 +39,10 @@ const FormCreatingCard: React.FC = () => {
       let counter = cardId;
 
       while ((coincidence = reBase.exec(fileContent)) !== null) {
-        const splitStr = coincidence[0].replace(/:\s*|\s+/g, ' ').split(/\s+/g);
+        const splitStr = coincidence[0].split(/(Q:|A:)/g);
         const card: ICard = {
           id: counter,
-          question: splitStr[1].replace(/^\s+|\s+$/g, ''),
+          question: splitStr[splitStr.length - 3].replace(/^\s+|\s+$/g, ''),
           answer: splitStr[splitStr.length - 1].replace(/^\s+|\s+$/g, ''),
         };
         cards.push(card);
