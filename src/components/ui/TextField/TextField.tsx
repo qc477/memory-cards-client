@@ -17,8 +17,8 @@ interface TextFieldProps {
 
 const TextField: React.FC<TextFieldProps> = ({ startIcon, type = 'text', value, placeholder, onClear, onChange }) => {
   const [isFocus, setFocus] = useState<boolean>(false);
-  const onFocus = () => setFocus(true);
-  const onBlur = () => setFocus(false);
+  const onFocus = () => setFocus((isFocus) => !isFocus);
+  const onBlur = () => setFocus((isFocus) => !isFocus);
   const styles = clsx(cl.textField, { [cl.inFocus]: isFocus });
 
   return (
