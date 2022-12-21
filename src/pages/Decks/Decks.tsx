@@ -39,7 +39,8 @@ const Decks: React.FC = () => {
         onClear={() => setQuery('')}
       />
       <div className={styles.wrapper}>
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <p>Загрузка...</p>}
+        {!searchDecks?.length && <p>У Вас не создано ни одной колоды. Хотите создать?</p>}
         {searchDecks &&
           searchDecks.map((deck) => (
             <Card key={deck.id}>
