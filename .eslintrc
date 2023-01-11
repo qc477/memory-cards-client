@@ -11,8 +11,10 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "import", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "prettier/prettier": "error"
@@ -20,7 +22,7 @@
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module",
-    "ecmaFeatures": {"jsx": true}
+    "ecmaFeatures": { "jsx": true }
   },
   "env": {
     "es6": true,
