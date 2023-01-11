@@ -1,5 +1,5 @@
 {
-  "name": "MemoryCards",
+  "name": "MemoryCards [Client]",
   "version": "1.0.0",
   "description": "React is an application based on the Leitner system for effective memorization and repetition using flash cards.",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/init63/leitnerSystemApp.git"
+    "url": "git+https://github.com/qc477/memory-cards-client.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/init63/MemoryCards/issues"
+    "url": "https://github.com/qc477/memory-cards-client/issues"
   },
-  "homepage": "https://github.com/init63/MemoryCards#readme",
+  "homepage": "https://github.com/qc477/memory-cards-client#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
     "react": "^18.2.0",
